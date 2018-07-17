@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="/"><b>SISTEMAS</b>STARPERU</a>
+            <b>SISTEMAS</b>STARPERU
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
@@ -45,11 +45,11 @@
 
                     <!-- /.col -->
                     <div class="col-xs-12">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar Sesión</button>
+                        <button type="submit" class="btn btn-danger btn-block btn-flat">Iniciar Sesión</button>
                     </div>
 
                     <div class=" col-xs-12">
-                        @*<label class="text-danger text-right">@Html.DisplayFor(model => model.MensajeError)</label>*@
+                        <label class="text-danger text-right">@Html.DisplayFor(model => model.MensajeError)</label>
                     </div>
 
 
@@ -63,5 +63,6 @@
     <!--Bundles assume jquery 2.1.3 and Bootstrap 3 -->
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
 </body>
 </html>
