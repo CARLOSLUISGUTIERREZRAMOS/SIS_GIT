@@ -22,7 +22,7 @@ namespace SIA.Models
         public Nullable<short> IdTipo { get; set; }
         public string UserNombre { get; set; }
         public string UserClave { get; set; }
-        [Required]
+        [Required]  
         [Display(Name = "CONSTRASEÑA")]
         public string UserPass { get; set; }
         public Nullable<System.DateTime> UserFecha { get; set; }

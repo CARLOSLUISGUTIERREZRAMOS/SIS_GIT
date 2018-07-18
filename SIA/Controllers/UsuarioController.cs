@@ -17,5 +17,11 @@ namespace SIA.Controllers
 
             return View(lista);
          }
+
+        public ActionResult Lista()
+        {
+            return View();
+        }
+
     }
 }
