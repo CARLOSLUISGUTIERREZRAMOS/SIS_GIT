@@ -712,6 +712,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Agentes.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgentesCuentas.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgentesMaster.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgentesTarjetas.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgentesTmp.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelIngresos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

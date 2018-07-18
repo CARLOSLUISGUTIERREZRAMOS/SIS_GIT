@@ -5,6 +5,153 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="IngresosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agentes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="CodigoRes" Type="varchar" MaxLength="8" />
+          <Property Name="CodigoInt" Type="varchar" MaxLength="8" />
+          <Property Name="CodigoMaster" Type="int" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Situacion" Type="int" />
+          <Property Name="Tipo" Type="smallint" />
+          <Property Name="Ruc" Type="varchar" MaxLength="25" />
+          <Property Name="TipoAgencia" Type="smallint" />
+          <Property Name="TipoAgente" Type="smallint" />
+          <Property Name="Direccion" Type="varchar" MaxLength="150" />
+          <Property Name="Localidad" Type="varchar" MaxLength="3" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="Pais" Type="varchar" MaxLength="35" />
+          <Property Name="Frecuencia" Type="char" MaxLength="1" />
+          <Property Name="Contacto" Type="varchar" MaxLength="50" />
+          <Property Name="Telefono1" Type="varchar" MaxLength="20" />
+          <Property Name="Telefono2" Type="varchar" MaxLength="20" />
+          <Property Name="Fax" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="Notas" Type="varchar" MaxLength="1000" />
+          <Property Name="Estado" Type="char" MaxLength="1" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="20" />
+          <Property Name="FechaReg" Type="datetime" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="20" />
+          <Property Name="FechaMod" Type="datetime" />
+          <Property Name="SysPC" Type="varchar" MaxLength="25" />
+          <Property Name="Grupo1" Type="char" MaxLength="20" />
+          <Property Name="Clase" Type="char" MaxLength="1" />
+          <Property Name="CtaBancaria" Type="varchar" MaxLength="20" />
+          <Property Name="flag" Type="int" />
+          <Property Name="Tour_code" Type="varchar" MaxLength="15" />
+          <Property Name="canEmi" Type="bit" />
+          <Property Name="AutoCrear" Type="smallint" />
+        </EntityType>
+        <EntityType Name="AgentesCuentas">
+          <Key>
+            <PropertyRef Name="Agente" />
+          </Key>
+          <Property Name="Agente" Type="int" Nullable="false" />
+          <Property Name="avVenta" Type="varchar" MaxLength="10" />
+          <Property Name="avCobrar" Type="varchar" MaxLength="10" />
+          <Property Name="acFxCobrar" Type="varchar" MaxLength="10" />
+          <Property Name="avCredito" Type="varchar" MaxLength="10" />
+          <Property Name="avCanje" Type="varchar" MaxLength="10" />
+          <Property Name="avDebito" Type="varchar" MaxLength="10" />
+          <Property Name="avNoRep" Type="varchar" MaxLength="10" />
+          <Property Name="avIGV" Type="varchar" MaxLength="10" />
+          <Property Name="avComxVenta" Type="varchar" MaxLength="10" />
+          <Property Name="FechaReg" Type="smalldatetime" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="35" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'Ingresos.dbo.AgentesImport' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="AgentesImport">
+          <Property Name="Codigo" Type="float" />
+          <Property Name="RazonSocial" Type="nvarchar" MaxLength="255" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="255" />
+          <Property Name="Direccion2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Localidad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Ciudad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Ciudad2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ciudad3" Type="varchar" MaxLength="50" />
+          <Property Name="Telefono1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Telefono2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Ruc" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+        <EntityType Name="AgentesMaster">
+          <Key>
+            <PropertyRef Name="CodigoMaster" />
+          </Key>
+          <Property Name="CodigoMaster" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Analitico" Type="char" MaxLength="1" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="30" />
+          <Property Name="FechaReg" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AgentesSubAgentes">
+          <Key>
+            <PropertyRef Name="AgenteSub" />
+          </Key>
+          <Property Name="AgenteSub" Type="int" Nullable="false" />
+          <Property Name="Agente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AgentesTarjetas">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Agente" Type="int" />
+          <Property Name="Tarjeta" Type="char" MaxLength="2" />
+          <Property Name="Establecimiento" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="AgentesTmp">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="CodigoRes" Type="varchar" MaxLength="8" />
+          <Property Name="CodigoInt" Type="varchar" MaxLength="8" />
+          <Property Name="CodigoMaster" Type="int" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Situacion" Type="int" />
+          <Property Name="Estado" Type="char" MaxLength="1" />
+          <Property Name="Tipo" Type="smallint" />
+          <Property Name="Ruc" Type="varchar" MaxLength="11" />
+          <Property Name="TipoAgencia" Type="smallint" />
+          <Property Name="TipoAgente" Type="smallint" />
+          <Property Name="Direccion" Type="varchar" MaxLength="150" />
+          <Property Name="Localidad" Type="varchar" MaxLength="3" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="Pais" Type="char" MaxLength="2" />
+          <Property Name="Frecuencia" Type="char" MaxLength="1" />
+          <Property Name="canEmi" Type="bit" />
+          <Property Name="Contacto" Type="varchar" MaxLength="50" />
+          <Property Name="Telefono1" Type="varchar" MaxLength="20" />
+          <Property Name="Telefono2" Type="varchar" MaxLength="20" />
+          <Property Name="Fax" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="email_orden" Type="varchar" MaxLength="100" />
+          <Property Name="Notas" Type="text" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="20" />
+          <Property Name="FechaReg" Type="datetime" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="20" />
+          <Property Name="FechaMod" Type="datetime" />
+          <Property Name="SysPC" Type="varchar" MaxLength="25" />
+          <Property Name="Grupo1" Type="char" MaxLength="20" />
+          <Property Name="Clase" Type="char" MaxLength="1" />
+          <Property Name="CtaBancaria" Type="varchar" MaxLength="20" />
+          <Property Name="OfficeId" Type="varchar" MaxLength="20" />
+          <Property Name="AutoCrear" Type="smallint" />
+          <Property Name="AuthOrden" Type="smallint" />
+          <Property Name="CodigoIata" Type="varchar" MaxLength="8" />
+          <Property Name="OfficeIdResi" Type="varchar" MaxLength="20" />
+          <Property Name="IdPromotora" Type="int" />
+          <Property Name="Flag" Type="smallint" />
+          <Property Name="codEstado" Type="varchar" MaxLength="2" />
+        </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="IdUsuario" />
@@ -33,8 +180,106 @@
           <Property Name="IdTipoUsuario" Type="int" />
           <Property Name="swAcceso" Type="bit" Nullable="false" />
         </EntityType>
+        <Association Name="FK_AgentesSubAgentes_Agentes">
+          <End Role="Agentes" Type="Self.Agentes" Multiplicity="1" />
+          <End Role="AgentesSubAgentes" Type="Self.AgentesSubAgentes" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Agentes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="AgentesSubAgentes">
+              <PropertyRef Name="AgenteSub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AgentesSubAgentes_AgentesCuentas">
+          <End Role="AgentesCuentas" Type="Self.AgentesCuentas" Multiplicity="1" />
+          <End Role="AgentesSubAgentes" Type="Self.AgentesSubAgentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgentesCuentas">
+              <PropertyRef Name="Agente" />
+            </Principal>
+            <Dependent Role="AgentesSubAgentes">
+              <PropertyRef Name="Agente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AgentesTarjetas_Agentes">
+          <End Role="Agentes" Type="Self.Agentes" Multiplicity="0..1" />
+          <End Role="AgentesTarjetas" Type="Self.AgentesTarjetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agentes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="AgentesTarjetas">
+              <PropertyRef Name="Agente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="IngresosModelStoreContainer">
+          <EntitySet Name="Agentes" EntityType="Self.Agentes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AgentesCuentas" EntityType="Self.AgentesCuentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AgentesMaster" EntityType="Self.AgentesMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AgentesSubAgentes" EntityType="Self.AgentesSubAgentes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AgentesTarjetas" EntityType="Self.AgentesTarjetas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AgentesTmp" EntityType="Self.AgentesTmp" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AgentesTmp].[Codigo] AS [Codigo], 
+    [AgentesTmp].[CodigoRes] AS [CodigoRes], 
+    [AgentesTmp].[CodigoInt] AS [CodigoInt], 
+    [AgentesTmp].[CodigoMaster] AS [CodigoMaster], 
+    [AgentesTmp].[RazonSocial] AS [RazonSocial], 
+    [AgentesTmp].[Nombre] AS [Nombre], 
+    [AgentesTmp].[Situacion] AS [Situacion], 
+    [AgentesTmp].[Estado] AS [Estado], 
+    [AgentesTmp].[Tipo] AS [Tipo], 
+    [AgentesTmp].[Ruc] AS [Ruc], 
+    [AgentesTmp].[TipoAgencia] AS [TipoAgencia], 
+    [AgentesTmp].[TipoAgente] AS [TipoAgente], 
+    [AgentesTmp].[Direccion] AS [Direccion], 
+    [AgentesTmp].[Localidad] AS [Localidad], 
+    [AgentesTmp].[Ciudad] AS [Ciudad], 
+    [AgentesTmp].[Pais] AS [Pais], 
+    [AgentesTmp].[Frecuencia] AS [Frecuencia], 
+    [AgentesTmp].[canEmi] AS [canEmi], 
+    [AgentesTmp].[Contacto] AS [Contacto], 
+    [AgentesTmp].[Telefono1] AS [Telefono1], 
+    [AgentesTmp].[Telefono2] AS [Telefono2], 
+    [AgentesTmp].[Fax] AS [Fax], 
+    [AgentesTmp].[email] AS [email], 
+    [AgentesTmp].[email_orden] AS [email_orden], 
+    [AgentesTmp].[Notas] AS [Notas], 
+    [AgentesTmp].[UsuarioReg] AS [UsuarioReg], 
+    [AgentesTmp].[FechaReg] AS [FechaReg], 
+    [AgentesTmp].[UsuarioMod] AS [UsuarioMod], 
+    [AgentesTmp].[FechaMod] AS [FechaMod], 
+    [AgentesTmp].[SysPC] AS [SysPC], 
+    [AgentesTmp].[Grupo1] AS [Grupo1], 
+    [AgentesTmp].[Clase] AS [Clase], 
+    [AgentesTmp].[CtaBancaria] AS [CtaBancaria], 
+    [AgentesTmp].[OfficeId] AS [OfficeId], 
+    [AgentesTmp].[AutoCrear] AS [AutoCrear], 
+    [AgentesTmp].[AuthOrden] AS [AuthOrden], 
+    [AgentesTmp].[CodigoIata] AS [CodigoIata], 
+    [AgentesTmp].[OfficeIdResi] AS [OfficeIdResi], 
+    [AgentesTmp].[IdPromotora] AS [IdPromotora], 
+    [AgentesTmp].[Flag] AS [Flag], 
+    [AgentesTmp].[codEstado] AS [codEstado]
+    FROM [dbo].[AgentesTmp] AS [AgentesTmp]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AgentesSubAgentes_Agentes" Association="Self.FK_AgentesSubAgentes_Agentes">
+            <End Role="Agentes" EntitySet="Agentes" />
+            <End Role="AgentesSubAgentes" EntitySet="AgentesSubAgentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AgentesSubAgentes_AgentesCuentas" Association="Self.FK_AgentesSubAgentes_AgentesCuentas">
+            <End Role="AgentesCuentas" EntitySet="AgentesCuentas" />
+            <End Role="AgentesSubAgentes" EntitySet="AgentesSubAgentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AgentesTarjetas_Agentes" Association="Self.FK_AgentesTarjetas_Agentes">
+            <End Role="Agentes" EntitySet="Agentes" />
+            <End Role="AgentesTarjetas" EntitySet="AgentesTarjetas" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -42,6 +287,19 @@
       <Schema Namespace="IngresosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="IngresosEntities" annotation:LazyLoadingEnabled="true" >
           <EntitySet Name="Usuario" EntityType="IngresosModel.Usuario" />
+          <EntitySet Name="Agentes" EntityType="IngresosModel.Agentes" />
+          <EntitySet Name="AgentesCuentas" EntityType="IngresosModel.AgentesCuentas" />
+          <EntitySet Name="AgentesMaster" EntityType="IngresosModel.AgentesMaster" />
+          <EntitySet Name="AgentesTarjetas" EntityType="IngresosModel.AgentesTarjetas" />
+          <EntitySet Name="AgentesTmp" EntityType="IngresosModel.AgentesTmp" />
+          <AssociationSet Name="FK_AgentesTarjetas_Agentes" Association="IngresosModel.FK_AgentesTarjetas_Agentes">
+            <End Role="Agentes" EntitySet="Agentes" />
+            <End Role="AgentesTarjetas" EntitySet="AgentesTarjetas" />
+          </AssociationSet>
+          <AssociationSet Name="AgentesSubAgentes" Association="IngresosModel.AgentesSubAgentes">
+            <End Role="Agentes" EntitySet="Agentes" />
+            <End Role="AgentesCuentas" EntitySet="AgentesCuentas" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -71,6 +329,148 @@
           <Property Name="IdTipoUsuario" Type="Int32" />
           <Property Name="swAcceso" Type="Boolean" Nullable="false" />
         </EntityType>
+        <EntityType Name="Agentes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="CodigoRes" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoInt" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoMaster" Type="Int32" />
+          <Property Name="RazonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Situacion" Type="Int32" />
+          <Property Name="Tipo" Type="Int16" />
+          <Property Name="Ruc" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TipoAgencia" Type="Int16" />
+          <Property Name="TipoAgente" Type="Int16" />
+          <Property Name="Direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Localidad" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Pais" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="Frecuencia" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Notas" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaMod" Type="DateTime" Precision="3" />
+          <Property Name="SysPC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Grupo1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Clase" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CtaBancaria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="flag" Type="Int32" />
+          <Property Name="Tour_code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="canEmi" Type="Boolean" />
+          <Property Name="AutoCrear" Type="Int16" />
+          <NavigationProperty Name="AgentesTarjetas" Relationship="IngresosModel.FK_AgentesTarjetas_Agentes" FromRole="Agentes" ToRole="AgentesTarjetas" />
+          <NavigationProperty Name="AgentesCuentas" Relationship="IngresosModel.AgentesSubAgentes" FromRole="Agentes" ToRole="AgentesCuentas" />
+        </EntityType>
+        <EntityType Name="AgentesCuentas">
+          <Key>
+            <PropertyRef Name="Agente" />
+          </Key>
+          <Property Name="Agente" Type="Int32" Nullable="false" />
+          <Property Name="avVenta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="avCobrar" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="acFxCobrar" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="avCredito" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="avCanje" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="avDebito" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="avNoRep" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="avIGV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="avComxVenta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="DateTime" Precision="0" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Agentes" Relationship="IngresosModel.AgentesSubAgentes" FromRole="AgentesCuentas" ToRole="Agentes" />
+        </EntityType>
+        <EntityType Name="AgentesMaster">
+          <Key>
+            <PropertyRef Name="CodigoMaster" />
+          </Key>
+          <Property Name="CodigoMaster" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Analitico" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="AgentesTarjetas">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Agente" Type="Int32" />
+          <Property Name="Tarjeta" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Establecimiento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Agentes" Relationship="IngresosModel.FK_AgentesTarjetas_Agentes" FromRole="AgentesTarjetas" ToRole="Agentes" />
+        </EntityType>
+        <EntityType Name="AgentesTmp">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="CodigoRes" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoInt" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoMaster" Type="Int32" />
+          <Property Name="RazonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Situacion" Type="Int32" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Tipo" Type="Int16" />
+          <Property Name="Ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="TipoAgencia" Type="Int16" />
+          <Property Name="TipoAgente" Type="Int16" />
+          <Property Name="Direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Localidad" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Pais" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Frecuencia" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="canEmi" Type="Boolean" />
+          <Property Name="Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email_orden" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Notas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaMod" Type="DateTime" Precision="3" />
+          <Property Name="SysPC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Grupo1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Clase" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CtaBancaria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OfficeId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AutoCrear" Type="Int16" />
+          <Property Name="AuthOrden" Type="Int16" />
+          <Property Name="CodigoIata" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="OfficeIdResi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IdPromotora" Type="Int32" />
+          <Property Name="Flag" Type="Int16" />
+          <Property Name="codEstado" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_AgentesTarjetas_Agentes">
+          <End Type="IngresosModel.Agentes" Role="Agentes" Multiplicity="0..1" />
+          <End Type="IngresosModel.AgentesTarjetas" Role="AgentesTarjetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agentes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="AgentesTarjetas">
+              <PropertyRef Name="Agente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AgentesSubAgentes">
+          <End Type="IngresosModel.Agentes" Role="Agentes" Multiplicity="*" />
+          <End Type="IngresosModel.AgentesCuentas" Role="AgentesCuentas" Multiplicity="0..1" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -106,6 +506,142 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Agentes">
+            <EntityTypeMapping TypeName="IngresosModel.Agentes">
+              <MappingFragment StoreEntitySet="Agentes">
+                <ScalarProperty Name="AutoCrear" ColumnName="AutoCrear" />
+                <ScalarProperty Name="canEmi" ColumnName="canEmi" />
+                <ScalarProperty Name="Tour_code" ColumnName="Tour_code" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="CtaBancaria" ColumnName="CtaBancaria" />
+                <ScalarProperty Name="Clase" ColumnName="Clase" />
+                <ScalarProperty Name="Grupo1" ColumnName="Grupo1" />
+                <ScalarProperty Name="SysPC" ColumnName="SysPC" />
+                <ScalarProperty Name="FechaMod" ColumnName="FechaMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+                <ScalarProperty Name="Frecuencia" ColumnName="Frecuencia" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TipoAgente" ColumnName="TipoAgente" />
+                <ScalarProperty Name="TipoAgencia" ColumnName="TipoAgencia" />
+                <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Situacion" ColumnName="Situacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="CodigoMaster" ColumnName="CodigoMaster" />
+                <ScalarProperty Name="CodigoInt" ColumnName="CodigoInt" />
+                <ScalarProperty Name="CodigoRes" ColumnName="CodigoRes" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgentesCuentas">
+            <EntityTypeMapping TypeName="IngresosModel.AgentesCuentas">
+              <MappingFragment StoreEntitySet="AgentesCuentas">
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="avComxVenta" ColumnName="avComxVenta" />
+                <ScalarProperty Name="avIGV" ColumnName="avIGV" />
+                <ScalarProperty Name="avNoRep" ColumnName="avNoRep" />
+                <ScalarProperty Name="avDebito" ColumnName="avDebito" />
+                <ScalarProperty Name="avCanje" ColumnName="avCanje" />
+                <ScalarProperty Name="avCredito" ColumnName="avCredito" />
+                <ScalarProperty Name="acFxCobrar" ColumnName="acFxCobrar" />
+                <ScalarProperty Name="avCobrar" ColumnName="avCobrar" />
+                <ScalarProperty Name="avVenta" ColumnName="avVenta" />
+                <ScalarProperty Name="Agente" ColumnName="Agente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgentesMaster">
+            <EntityTypeMapping TypeName="IngresosModel.AgentesMaster">
+              <MappingFragment StoreEntitySet="AgentesMaster">
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="Analitico" ColumnName="Analitico" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="CodigoMaster" ColumnName="CodigoMaster" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgentesTarjetas">
+            <EntityTypeMapping TypeName="IngresosModel.AgentesTarjetas">
+              <MappingFragment StoreEntitySet="AgentesTarjetas">
+                <ScalarProperty Name="Establecimiento" ColumnName="Establecimiento" />
+                <ScalarProperty Name="Tarjeta" ColumnName="Tarjeta" />
+                <ScalarProperty Name="Agente" ColumnName="Agente" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgentesTmp">
+            <EntityTypeMapping TypeName="IngresosModel.AgentesTmp">
+              <MappingFragment StoreEntitySet="AgentesTmp">
+                <ScalarProperty Name="codEstado" ColumnName="codEstado" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="IdPromotora" ColumnName="IdPromotora" />
+                <ScalarProperty Name="OfficeIdResi" ColumnName="OfficeIdResi" />
+                <ScalarProperty Name="CodigoIata" ColumnName="CodigoIata" />
+                <ScalarProperty Name="AuthOrden" ColumnName="AuthOrden" />
+                <ScalarProperty Name="AutoCrear" ColumnName="AutoCrear" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="CtaBancaria" ColumnName="CtaBancaria" />
+                <ScalarProperty Name="Clase" ColumnName="Clase" />
+                <ScalarProperty Name="Grupo1" ColumnName="Grupo1" />
+                <ScalarProperty Name="SysPC" ColumnName="SysPC" />
+                <ScalarProperty Name="FechaMod" ColumnName="FechaMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+                <ScalarProperty Name="email_orden" ColumnName="email_orden" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+                <ScalarProperty Name="canEmi" ColumnName="canEmi" />
+                <ScalarProperty Name="Frecuencia" ColumnName="Frecuencia" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TipoAgente" ColumnName="TipoAgente" />
+                <ScalarProperty Name="TipoAgencia" ColumnName="TipoAgencia" />
+                <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Situacion" ColumnName="Situacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="CodigoMaster" ColumnName="CodigoMaster" />
+                <ScalarProperty Name="CodigoInt" ColumnName="CodigoInt" />
+                <ScalarProperty Name="CodigoRes" ColumnName="CodigoRes" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AgentesSubAgentes" TypeName="IngresosModel.AgentesSubAgentes" StoreEntitySet="AgentesSubAgentes">
+            <EndProperty Name="AgentesCuentas">
+              <ScalarProperty Name="Agente" ColumnName="Agente" />
+            </EndProperty>
+            <EndProperty Name="Agentes">
+              <ScalarProperty Name="Codigo" ColumnName="AgenteSub" />
+            </EndProperty>
+            <Condition ColumnName="Agente" IsNull="false" />
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -11,19 +11,14 @@ namespace SIA.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Usuario
     {
-        [Required]
-        [Display(Name = "USUARIO")]
         public string IdUsuario { get; set; }
         public Nullable<bool> Inactivo { get; set; }
         public Nullable<short> IdTipo { get; set; }
         public string UserNombre { get; set; }
         public string UserClave { get; set; }
-        [Required]  
-        [Display(Name = "CONSTRASEÑA")]
         public string UserPass { get; set; }
         public Nullable<System.DateTime> UserFecha { get; set; }
         public string UserLoc { get; set; }
@@ -42,6 +37,5 @@ namespace SIA.Models
         public string Clave { get; set; }
         public Nullable<int> IdTipoUsuario { get; set; }
         public bool swAcceso { get; set; }
-        public string MensajeError { get; set; }
     }
 }
