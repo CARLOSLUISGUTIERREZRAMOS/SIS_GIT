@@ -683,6 +683,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
@@ -707,6 +708,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminLteController.cs" />
+    <Compile Include="Controllers\AgentesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -721,6 +723,7 @@
     <Compile Include="Models\AgentesMaster.cs">
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AgentesModel.cs" />
     <Compile Include="Models\AgentesTarjetas.cs">
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
@@ -741,6 +744,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelIngresos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoAgencia.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoAgente.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>ModelIngresos.tt</DependentUpon>
@@ -770,6 +779,11 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Agentes\Create.cshtml" />
+    <Content Include="Views\Agentes\Delete.cshtml" />
+    <Content Include="Views\Agentes\Details.cshtml" />
+    <Content Include="Views\Agentes\Edit.cshtml" />
+    <Content Include="Views\Agentes\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

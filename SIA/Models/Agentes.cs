@@ -59,5 +59,7 @@ namespace SIA.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AgentesTarjetas> AgentesTarjetas { get; set; }
         public virtual AgentesCuentas AgentesCuentas { get; set; }
+        public virtual TipoAgencia TipoAgencia1 { get; set; }
+        public virtual TipoAgente TipoAgente1 { get; set; }
     }
 }

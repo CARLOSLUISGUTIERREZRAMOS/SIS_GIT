@@ -31,5 +31,7 @@ namespace SIA.Models
         public virtual DbSet<AgentesMaster> AgentesMaster { get; set; }
         public virtual DbSet<AgentesTarjetas> AgentesTarjetas { get; set; }
         public virtual DbSet<AgentesTmp> AgentesTmp { get; set; }
+        public virtual DbSet<TipoAgencia> TipoAgencia { get; set; }
+        public virtual DbSet<TipoAgente> TipoAgente { get; set; }
     }
 }

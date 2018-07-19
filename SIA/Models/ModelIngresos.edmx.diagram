@@ -13,6 +13,10 @@
         <EntityTypeShape EntityType="IngresosModel.AgentesTmp" Width="1.5" PointX="0.75" PointY="3.75" />
         <AssociationConnector Association="IngresosModel.FK_AgentesTarjetas_Agentes" />
         <AssociationConnector Association="IngresosModel.AgentesSubAgentes" />
+        <EntityTypeShape EntityType="IngresosModel.TipoAgencia" Width="1.5" PointX="3.5" PointY="9.875" />
+        <EntityTypeShape EntityType="IngresosModel.TipoAgente" Width="1.5" PointX="3.5" PointY="7.5" />
+        <AssociationConnector Association="IngresosModel.FK_Agentes_TipoAgencia" />
+        <AssociationConnector Association="IngresosModel.FK_Agentes_TipoAgente" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
