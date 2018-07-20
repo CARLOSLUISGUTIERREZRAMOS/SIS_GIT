@@ -18,7 +18,7 @@ namespace SIA.Controllers
         // GET: Agentes
         //public ActionResult Index()
         //{
-        //    return View(db.Agentes.ToList());GC
+        //    return View(db.Agentes.ToList()); CLGR
         //}
 
         public ActionResult Index()
