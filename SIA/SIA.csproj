@@ -113,6 +113,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularJS\bienvenidoController.js" />
+    <Content Include="AngularJS\RegistrationModule.js" />
+    <Content Include="AngularJS\Templates\inicio.html" />
     <Content Include="Content\AdminLTE\AdminLTE.css" />
     <Content Include="Content\AdminLTE\AdminLTE.min.css" />
     <Content Include="Content\AdminLTE\img\avatar.png" />

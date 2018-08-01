@@ -23,7 +23,7 @@ namespace SIA.Controllers
 
         public ActionResult Index()
         {
-            int codigo = 1000441;
+            
             using (var db = new IngresosEntities())
             {
                 
@@ -50,7 +50,7 @@ namespace SIA.Controllers
                                           Telefono1 = AG.Telefono1
                                       };
                     //String valor =  informacion.FirstOrDefault().ToString();
-                    return View(informacion.ToList().Take(100).OrderByDescending(ag => ag.Codigo));
+                    return View(informacion.ToList().Take(10).OrderByDescending(ag => ag.Codigo));
 
                 }
                 catch (Exception e)
