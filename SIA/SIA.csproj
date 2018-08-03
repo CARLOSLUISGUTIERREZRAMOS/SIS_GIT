@@ -1535,6 +1535,7 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UsuarioCE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
