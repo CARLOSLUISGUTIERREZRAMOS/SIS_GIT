@@ -21,6 +21,7 @@ namespace SIA.Controllers
         //    return View(db.Agentes.ToList()); CLGR_01/16/1989
         //}
 
+        [OutputCache(Duration = 360)]
         public ActionResult Index()
         {
             
@@ -28,6 +29,7 @@ namespace SIA.Controllers
             {
                 
                 try
+
                 {
                     var informacion = from AG in db.Agentes
                                       join TA in db.TipoAgente on AG.TipoAgente equals TA.IdTipo

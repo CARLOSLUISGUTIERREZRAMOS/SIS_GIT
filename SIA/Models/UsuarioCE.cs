@@ -12,6 +12,7 @@ namespace SIA.Models
     public partial class Usuario
     {
         public String MensajeError { get; set; }
+        
     }
 
 }

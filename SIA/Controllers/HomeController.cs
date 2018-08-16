@@ -17,7 +17,7 @@ namespace SIA.Controllers
             return View();
         }
 
-        public ActionResult Login()
+        public ActionResult Login() 
         {
             return View();
         }

@@ -14,7 +14,7 @@ namespace SIA.Models
         public string CodigoRes { get; set; }
         [Display(Name = "Cod Int")]
         public string CodigoInt { get; set; }
-        [Display(Name = "Razon Social")]
+        [Display(Name = "Razon Socia")]
         public string RazonSocial { get; set; }
         public string Ruc { get; set; }
         [Display(Name = "Tipo Agente")]
