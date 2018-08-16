@@ -11,11 +11,17 @@
 
 
     //Relación ubicacion (TEXTO - ? -ICONO)
-
-    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
-new Crumb("Principal","","fa-home")
-});
 }
+<div class="form-group">
+    <label>Fecha:</label>
 
-<h2>ListaVuelos</h2>
+    <div class="input-group">
+        <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </div>
+        <input type="text" class="form-control pull-right" id="reservation">
+    </div>
+    <!-- /.input group -->
+</div>
+
 
