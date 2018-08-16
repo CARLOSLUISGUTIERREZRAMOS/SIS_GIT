@@ -1,0 +1,21 @@
+﻿
+@{
+
+    if (Session["IdUsuario"] == null)
+    {
+        Response.Redirect("~/Home/Login");
+    }
+    // ESTABLECEMOS EL TITULO DEL CONTENIDO PRINCIPAL
+    ViewBag.Title = "Lista de Vuelos";
+    // TEXTO ADICIONAL DEL TITULO (MENOR TAMAÑO)
+
+
+    //Relación ubicacion (TEXTO - ? -ICONO)
+
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+new Crumb("Principal","","fa-home")
+});
+}
+
+<h2>ListaVuelos</h2>
+
