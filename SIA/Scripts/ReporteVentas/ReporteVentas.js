@@ -1,3 +1,4 @@
 ﻿$(function () {
-    alert('Hola');
+    $('#nav_reportesVentas').hide();
+    
 });
