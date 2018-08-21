@@ -159,6 +159,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img_Company\dev.png" />
+    <Content Include="Content\Img_Company\icostar.jpg" />
+    <Content Include="Content\Img_Company\logo_starperu.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -689,6 +692,11 @@
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile5.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile6.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile7.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile8.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile9.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\AdminLTE\Vuelos\vuelo.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -757,6 +765,21 @@
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UsuarioCE.cs" />
+    <Compile Include="Models\VentasBoletos.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VentasCabecera.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VentasCabeceraNotas.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VentasCabeceraTotales.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VentasCabecera_Log.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Vuelos.cs">
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
@@ -800,7 +823,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Img_Company\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

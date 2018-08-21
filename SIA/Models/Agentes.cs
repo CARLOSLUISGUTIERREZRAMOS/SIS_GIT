@@ -18,6 +18,7 @@ namespace SIA.Models
         public Agentes()
         {
             this.AgentesTarjetas = new HashSet<AgentesTarjetas>();
+            this.VentasCabecera = new HashSet<VentasCabecera>();
         }
     
         public int Codigo { get; set; }
@@ -61,5 +62,7 @@ namespace SIA.Models
         public virtual AgentesCuentas AgentesCuentas { get; set; }
         public virtual TipoAgencia TipoAgencia1 { get; set; }
         public virtual TipoAgente TipoAgente1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VentasCabecera> VentasCabecera { get; set; }
     }
 }

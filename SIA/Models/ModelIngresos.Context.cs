@@ -34,5 +34,10 @@ namespace SIA.Models
         public virtual DbSet<TipoAgencia> TipoAgencia { get; set; }
         public virtual DbSet<TipoAgente> TipoAgente { get; set; }
         public virtual DbSet<Vuelos> Vuelos { get; set; }
+        public virtual DbSet<VentasBoletos> VentasBoletos { get; set; }
+        public virtual DbSet<VentasCabecera> VentasCabecera { get; set; }
+        public virtual DbSet<VentasCabecera_Log> VentasCabecera_Log { get; set; }
+        public virtual DbSet<VentasCabeceraNotas> VentasCabeceraNotas { get; set; }
+        public virtual DbSet<VentasCabeceraTotales> VentasCabeceraTotales { get; set; }
     }
 }

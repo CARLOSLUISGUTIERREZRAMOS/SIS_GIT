@@ -18,6 +18,16 @@
         <AssociationConnector Association="IngresosModel.FK_Agentes_TipoAgencia" />
         <AssociationConnector Association="IngresosModel.FK_Agentes_TipoAgente" />
         <EntityTypeShape EntityType="IngresosModel.Vuelos" Width="1.5" PointX="8.375" PointY="9.75" />
+        <EntityTypeShape EntityType="IngresosModel.VentasBoletos" Width="1.5" PointX="10.25" PointY="18.375" />
+        <EntityTypeShape EntityType="IngresosModel.VentasCabecera" Width="1.5" PointX="8" PointY="31.25" />
+        <EntityTypeShape EntityType="IngresosModel.VentasCabecera_Log" Width="1.5" PointX="10.25" PointY="38" />
+        <EntityTypeShape EntityType="IngresosModel.VentasCabeceraNotas" Width="1.5" PointX="10.25" PointY="41.125" />
+        <EntityTypeShape EntityType="IngresosModel.VentasCabeceraTotales" Width="1.5" PointX="10.25" PointY="44.375" />
+        <AssociationConnector Association="IngresosModel.FK_VentasCabecera_AgentesCode" />
+        <AssociationConnector Association="IngresosModel.FK_VentasBoletos_VentasCabecera" />
+        <AssociationConnector Association="IngresosModel.FK_VentasCabecera_Log_VentasCabecera" />
+        <AssociationConnector Association="IngresosModel.FK_VentasCabeceraNotas_VentasCabecera" />
+        <AssociationConnector Association="IngresosModel.FK_VentasCabeceraTotales_VentasCabecera" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

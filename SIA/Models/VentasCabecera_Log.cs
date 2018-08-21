@@ -12,12 +12,15 @@ namespace SIA.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AgentesMaster
+    public partial class VentasCabecera_Log
     {
-        public int CodigoMaster { get; set; }
-        public string Nombre { get; set; }
-        public string Analitico { get; set; }
-        public string UsuarioReg { get; set; }
+        public int Grupo { get; set; }
+        public int Id { get; set; }
+        public string Accion { get; set; }
         public Nullable<System.DateTime> FechaReg { get; set; }
+        public string UsuarioReg { get; set; }
+        public string SysPc { get; set; }
+    
+        public virtual VentasCabecera VentasCabecera { get; set; }
     }
 }

@@ -178,6 +178,250 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <Property Name="IdTipoUsuario" Type="int" />
           <Property Name="swAcceso" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="VentasBoletos">
+          <Key>
+            <PropertyRef Name="Boleto" />
+          </Key>
+          <Property Name="Boleto" Type="char" MaxLength="13" Nullable="false" />
+          <Property Name="Grupo" Type="int" Nullable="false" />
+          <Property Name="Agente" Type="int" />
+          <Property Name="AgenteBol" Type="int" />
+          <Property Name="TipoBoleto" Type="tinyint" />
+          <Property Name="Cia" Type="char" MaxLength="3" />
+          <Property Name="Forma" Type="char" MaxLength="4" />
+          <Property Name="Serie" Type="int" />
+          <Property Name="Validador" Type="tinyint" />
+          <Property Name="TipoPax" Type="tinyint" />
+          <Property Name="Pasajero" Type="varchar" MaxLength="50" />
+          <Property Name="FechaEmision" Type="smalldatetime" />
+          <Property Name="Clase" Type="char" MaxLength="1" />
+          <Property Name="BaseTarifa" Type="varchar" MaxLength="20" />
+          <Property Name="Promocion" Type="varchar" MaxLength="10" />
+          <Property Name="TipoDoc" Type="char" MaxLength="2" />
+          <Property Name="NumDoc" Type="varchar" MaxLength="15" />
+          <Property Name="RutaRef" Type="varchar" MaxLength="50" />
+          <Property Name="CalculoTarifa" Type="text" />
+          <Property Name="TarifaRef" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Tarifa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="QSeguridad" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotTarifa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IgvTarifa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TaxExo" Type="bit" Nullable="false" />
+          <Property Name="PorcentajeComm" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Comision" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IgvComision" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosIngresos" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TipoPago1" Type="char" MaxLength="2" />
+          <Property Name="TipoPago2" Type="char" MaxLength="2" />
+          <Property Name="TipoPago3" Type="char" MaxLength="2" />
+          <Property Name="TipoPago4" Type="char" MaxLength="2" />
+          <Property Name="Pago1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Pago2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Pago3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Pago4" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Notas" Type="varchar" MaxLength="1000" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="20" />
+          <Property Name="FechaReg" Type="datetime" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="20" />
+          <Property Name="FechaMod" Type="datetime" />
+          <Property Name="venta_tipo" Type="char" MaxLength="3" />
+          <Property Name="SysUser" Type="varchar" MaxLength="30" />
+          <Property Name="SysPc" Type="varchar" MaxLength="30" />
+          <Property Name="IdOtroIngreso" Type="int" />
+          <Property Name="pnr" Type="varchar" MaxLength="12" />
+          <Property Name="OtrosTax" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Conjuncion" Type="varchar" MaxLength="13" />
+          <Property Name="Valorado" Type="bit" />
+          <Property Name="rucnom" Type="varchar" MaxLength="50" />
+          <Property Name="ruc" Type="varchar" MaxLength="11" />
+          <Property Name="TotTax" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="OtroImp" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Trans" Type="varchar" MaxLength="5" />
+          <Property Name="tour_code" Type="varchar" MaxLength="20" />
+          <Property Name="sup_rate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sup_amt" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Reprice" Type="varchar" MaxLength="1" />
+          <Property Name="NumExchange" Type="int" />
+          <Property Name="ImpExchange" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="DifExchange" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Moneda" Type="char" MaxLength="3" />
+          <Property Name="Bsr" Type="numeric" Precision="18" Scale="5" />
+          <Property Name="TarifaEqui" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Stat" Type="varchar" MaxLength="3" />
+          <Property Name="emd_razon" Type="varchar" MaxLength="86" />
+          <Property Name="emd_cod_emision" Type="varchar" MaxLength="1" />
+          <Property Name="emd_cupon_imp" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="emd_cupon_moneda" Type="varchar" MaxLength="3" />
+          <Property Name="emd_boleto_num" Type="varchar" MaxLength="13" />
+          <Property Name="emd_boleto_cup" Type="int" />
+          <Property Name="emd_otros" Type="int" />
+          <Property Name="emd_airline" Type="varchar" MaxLength="2" />
+          <Property Name="emd_exc_over" Type="varchar" MaxLength="1" />
+          <Property Name="emd_exc_precio" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="emd_exc_piezas" Type="int" />
+          <Property Name="emd_consume" Type="varchar" MaxLength="1" />
+          <Property Name="emd_notas" Type="varchar" MaxLength="70" />
+          <Property Name="emd_cupon_num" Type="int" />
+          <Property Name="emd_subcodigo" Type="varchar" MaxLength="3" />
+          <Property Name="OtrasNotas" Type="varchar" MaxLength="100" />
+          <Property Name="valorado_metodo" Type="char" MaxLength="1" />
+          <Property Name="moneda_fare" Type="varchar" MaxLength="3" />
+          <Property Name="tkt_ind" Type="varchar" MaxLength="1" />
+          <Property Name="sys_origen" Type="varchar" MaxLength="2" />
+          <Property Name="original_issue" Type="varchar" MaxLength="50" />
+          <Property Name="res_agent" Type="varchar" MaxLength="6" />
+          <Property Name="foid" Type="varchar" MaxLength="50" />
+          <Property Name="Total" Type="numeric" Precision="21" Scale="2" StoreGeneratedPattern="Computed" />
+          <Property Name="conj_ind" Type="varchar" MaxLength="3" />
+          <Property Name="Endosos" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="VentasCabecera">
+          <Key>
+            <PropertyRef Name="Grupo" />
+          </Key>
+          <Property Name="Grupo" Type="int" Nullable="false" />
+          <Property Name="Pais" Type="char" MaxLength="2" />
+          <Property Name="Origen" Type="varchar" MaxLength="6" />
+          <Property Name="Tipo" Type="char" MaxLength="3" />
+          <Property Name="Año" Type="int" />
+          <Property Name="Mes" Type="int" />
+          <Property Name="Ciclo" Type="int" />
+          <Property Name="Estado" Type="tinyint" />
+          <Property Name="Agente" Type="int" />
+          <Property Name="FechaRecepcion" Type="datetime" />
+          <Property Name="FechaReporte" Type="datetime" />
+          <Property Name="FechaContable" Type="datetime" />
+          <Property Name="Moneda" Type="char" MaxLength="3" />
+          <Property Name="TipoCambio" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="PeriodoReporte" Type="varchar" MaxLength="60" />
+          <Property Name="NroTkts" Type="int" />
+          <Property Name="NroPtas" Type="int" />
+          <Property Name="NroVoids" Type="int" />
+          <Property Name="Comision" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IgvComision" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Contado" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Credito" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Canje" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosCargos" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Tarifa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IgvTarifa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosImp" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosIngresos" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtrasComisiones" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosCreditos" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosTax" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SaldoDepo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SaldoFactu" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Remark" Type="varchar" MaxLength="5000" Nullable="false" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="30" />
+          <Property Name="FechaReg" Type="datetime" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="30" />
+          <Property Name="FechaMod" Type="datetime" />
+          <Property Name="UsuarioPrecierre" Type="varchar" MaxLength="30" />
+          <Property Name="FechaPrecierre" Type="datetime" />
+          <Property Name="UsuarioConta" Type="varchar" MaxLength="30" />
+          <Property Name="Fechaconta" Type="datetime" />
+          <Property Name="Notas" Type="varchar" MaxLength="1000" />
+          <Property Name="venta_contado" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="venta_credito" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="venta_directa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="venta_indirecta" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Abierto" Type="bit" />
+          <Property Name="UsuarioCierre" Type="varchar" MaxLength="30" />
+          <Property Name="FechaCierre" Type="datetime" />
+          <Property Name="noReportado" Type="char" MaxLength="1" />
+          <Property Name="Ajustes" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SaldoFinal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="F1" Type="bit" />
+          <Property Name="FechaIni" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="VentasCabecera_Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Grupo" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Accion" Type="char" MaxLength="6" />
+          <Property Name="FechaReg" Type="datetime" />
+          <Property Name="UsuarioReg" Type="char" MaxLength="30" />
+          <Property Name="SysPc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VentasCabeceraNotas">
+          <Key>
+            <PropertyRef Name="Grupo" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Grupo" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nota" Type="varchar" MaxLength="100" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="30" />
+          <Property Name="FechaReg" Type="datetime" />
+          <Property Name="systemuser" Type="varchar" MaxLength="50" />
+          <Property Name="systempc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VentasCabeceraTotales">
+          <Key>
+            <PropertyRef Name="grupo" />
+          </Key>
+          <Property Name="grupo" Type="int" Nullable="false" />
+          <Property Name="contado1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="credito1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="canjes1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="ctacje1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="tarifa1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="igvtarifa1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="otingreso1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="otrosimp1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="otcredito1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="comision1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="igvcomision1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="tickets1" Type="int" />
+          <Property Name="pta1" Type="int" />
+          <Property Name="void1" Type="int" />
+          <Property Name="totaltkt1" Type="int" />
+          <Property Name="contado2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="credito2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="canjes2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="ctacje2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="ctacje" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="tarifa2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="igvtarifa2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="otingreso2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="otrosimp2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="otcredito2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="otcredito" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="comision2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="igvcomision2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="tickets2" Type="int" />
+          <Property Name="pta2" Type="int" />
+          <Property Name="void2" Type="int" />
+          <Property Name="totaltkt2" Type="int" />
+          <Property Name="deposito1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="deposito2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="facturas1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="facturas2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="ncredito" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="con_num_dep_gen" Type="int" />
+          <Property Name="con_imp_dep_gen" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="con_num_dep_rec" Type="int" />
+          <Property Name="con_imp_dep_rec" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="con_num_fac_gen" Type="int" />
+          <Property Name="con_imp_fac_gen" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="con_num_fac_rec" Type="int" />
+          <Property Name="con_imp_fac_rec" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="acmapli" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="acmemit" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="admapli" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="admemit" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="tarjeta1" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="tarjeta2" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="gastos" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="reembolso" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="difere" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="ajuste" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="saldo" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="fechareg" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="Vuelos">
           <Key>
             <PropertyRef Name="IdVuelo" />
@@ -274,6 +518,66 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VentasBoletos_VentasCabecera">
+          <End Role="VentasCabecera" Type="Self.VentasCabecera" Multiplicity="1" />
+          <End Role="VentasBoletos" Type="Self.VentasBoletos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VentasCabecera">
+              <PropertyRef Name="Grupo" />
+            </Principal>
+            <Dependent Role="VentasBoletos">
+              <PropertyRef Name="Grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasCabecera_AgentesCode">
+          <End Role="Agentes" Type="Self.Agentes" Multiplicity="0..1" />
+          <End Role="VentasCabecera" Type="Self.VentasCabecera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agentes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="VentasCabecera">
+              <PropertyRef Name="Agente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasCabecera_Log_VentasCabecera">
+          <End Role="VentasCabecera" Type="Self.VentasCabecera" Multiplicity="1" />
+          <End Role="VentasCabecera_Log" Type="Self.VentasCabecera_Log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VentasCabecera">
+              <PropertyRef Name="Grupo" />
+            </Principal>
+            <Dependent Role="VentasCabecera_Log">
+              <PropertyRef Name="Grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasCabeceraNotas_VentasCabecera">
+          <End Role="VentasCabecera" Type="Self.VentasCabecera" Multiplicity="1" />
+          <End Role="VentasCabeceraNotas" Type="Self.VentasCabeceraNotas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VentasCabecera">
+              <PropertyRef Name="Grupo" />
+            </Principal>
+            <Dependent Role="VentasCabeceraNotas">
+              <PropertyRef Name="Grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasCabeceraTotales_VentasCabecera">
+          <End Role="VentasCabecera" Type="Self.VentasCabecera" Multiplicity="1" />
+          <End Role="VentasCabeceraTotales" Type="Self.VentasCabeceraTotales" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="VentasCabecera">
+              <PropertyRef Name="Grupo" />
+            </Principal>
+            <Dependent Role="VentasCabeceraTotales">
+              <PropertyRef Name="grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="IngresosModelStoreContainer">
           <EntitySet Name="Agentes" EntityType="Self.Agentes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AgentesCuentas" EntityType="Self.AgentesCuentas" Schema="dbo" store:Type="Tables" />
@@ -283,6 +587,11 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <EntitySet Name="TipoAgencia" EntityType="Self.TipoAgencia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoAgente" EntityType="Self.TipoAgente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VentasBoletos" EntityType="Self.VentasBoletos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VentasCabecera" EntityType="Self.VentasCabecera" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VentasCabecera_Log" EntityType="Self.VentasCabecera_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VentasCabeceraNotas" EntityType="Self.VentasCabeceraNotas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VentasCabeceraTotales" EntityType="Self.VentasCabeceraTotales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vuelos" EntityType="Self.Vuelos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AgentesTmp" EntityType="Self.AgentesTmp" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -349,6 +658,26 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
             <End Role="Agentes" EntitySet="Agentes" />
             <End Role="AgentesTarjetas" EntitySet="AgentesTarjetas" />
           </AssociationSet>
+          <AssociationSet Name="FK_VentasBoletos_VentasCabecera" Association="Self.FK_VentasBoletos_VentasCabecera">
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+            <End Role="VentasBoletos" EntitySet="VentasBoletos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasCabecera_AgentesCode" Association="Self.FK_VentasCabecera_AgentesCode">
+            <End Role="Agentes" EntitySet="Agentes" />
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasCabecera_Log_VentasCabecera" Association="Self.FK_VentasCabecera_Log_VentasCabecera">
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+            <End Role="VentasCabecera_Log" EntitySet="VentasCabecera_Log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasCabeceraNotas_VentasCabecera" Association="Self.FK_VentasCabeceraNotas_VentasCabecera">
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+            <End Role="VentasCabeceraNotas" EntitySet="VentasCabeceraNotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasCabeceraTotales_VentasCabecera" Association="Self.FK_VentasCabeceraTotales_VentasCabecera">
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+            <End Role="VentasCabeceraTotales" EntitySet="VentasCabeceraTotales" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -380,6 +709,31 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
             <End Role="Agentes" EntitySet="Agentes" />
           </AssociationSet>
           <EntitySet Name="Vuelos" EntityType="IngresosModel.Vuelos" />
+          <EntitySet Name="VentasBoletos" EntityType="IngresosModel.VentasBoletos" />
+          <EntitySet Name="VentasCabecera" EntityType="IngresosModel.VentasCabecera" />
+          <EntitySet Name="VentasCabecera_Log" EntityType="IngresosModel.VentasCabecera_Log" />
+          <EntitySet Name="VentasCabeceraNotas" EntityType="IngresosModel.VentasCabeceraNotas" />
+          <EntitySet Name="VentasCabeceraTotales" EntityType="IngresosModel.VentasCabeceraTotales" />
+          <AssociationSet Name="FK_VentasCabecera_AgentesCode" Association="IngresosModel.FK_VentasCabecera_AgentesCode">
+            <End Role="Agentes" EntitySet="Agentes" />
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasBoletos_VentasCabecera" Association="IngresosModel.FK_VentasBoletos_VentasCabecera">
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+            <End Role="VentasBoletos" EntitySet="VentasBoletos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasCabecera_Log_VentasCabecera" Association="IngresosModel.FK_VentasCabecera_Log_VentasCabecera">
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+            <End Role="VentasCabecera_Log" EntitySet="VentasCabecera_Log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasCabeceraNotas_VentasCabecera" Association="IngresosModel.FK_VentasCabeceraNotas_VentasCabecera">
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+            <End Role="VentasCabeceraNotas" EntitySet="VentasCabeceraNotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentasCabeceraTotales_VentasCabecera" Association="IngresosModel.FK_VentasCabeceraTotales_VentasCabecera">
+            <End Role="VentasCabecera" EntitySet="VentasCabecera" />
+            <End Role="VentasCabeceraTotales" EntitySet="VentasCabeceraTotales" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -452,6 +806,7 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <NavigationProperty Name="AgentesCuentas" Relationship="IngresosModel.AgentesSubAgentes" FromRole="Agentes" ToRole="AgentesCuentas" />
           <NavigationProperty Name="TipoAgencia1" Relationship="IngresosModel.FK_Agentes_TipoAgencia" FromRole="Agentes" ToRole="TipoAgencia" />
           <NavigationProperty Name="TipoAgente1" Relationship="IngresosModel.FK_Agentes_TipoAgente" FromRole="Agentes" ToRole="TipoAgente" />
+          <NavigationProperty Name="VentasCabecera" Relationship="IngresosModel.FK_VentasCabecera_AgentesCode" FromRole="Agentes" ToRole="VentasCabecera" />
         </EntityType>
         <EntityType Name="AgentesCuentas">
           <Key>
@@ -629,6 +984,319 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <Property Name="NotasCierre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="FechaContable" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="VentasBoletos">
+          <Key>
+            <PropertyRef Name="Boleto" />
+          </Key>
+          <Property Name="Boleto" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="Grupo" Type="Int32" Nullable="false" />
+          <Property Name="Agente" Type="Int32" />
+          <Property Name="AgenteBol" Type="Int32" />
+          <Property Name="TipoBoleto" Type="Byte" />
+          <Property Name="Cia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="Forma" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="Serie" Type="Int32" />
+          <Property Name="Validador" Type="Byte" />
+          <Property Name="TipoPax" Type="Byte" />
+          <Property Name="Pasajero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaEmision" Type="DateTime" Precision="0" />
+          <Property Name="Clase" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="BaseTarifa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Promocion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TipoDoc" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="NumDoc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="RutaRef" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CalculoTarifa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TarifaRef" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Tarifa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="QSeguridad" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotTarifa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IgvTarifa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TaxExo" Type="Boolean" Nullable="false" />
+          <Property Name="PorcentajeComm" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Comision" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IgvComision" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosIngresos" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TipoPago1" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="TipoPago2" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="TipoPago3" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="TipoPago4" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Pago1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Pago2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Pago3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Pago4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Notas" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaMod" Type="DateTime" Precision="3" />
+          <Property Name="venta_tipo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="SysUser" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SysPc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IdOtroIngreso" Type="Int32" />
+          <Property Name="pnr" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="OtrosTax" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Conjuncion" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Valorado" Type="Boolean" />
+          <Property Name="rucnom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="TotTax" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="OtroImp" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Trans" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="tour_code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sup_rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sup_amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Reprice" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="NumExchange" Type="Int32" />
+          <Property Name="ImpExchange" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DifExchange" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Moneda" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="Bsr" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="TarifaEqui" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Stat" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="emd_razon" Type="String" MaxLength="86" FixedLength="false" Unicode="false" />
+          <Property Name="emd_cod_emision" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="emd_cupon_imp" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="emd_cupon_moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="emd_boleto_num" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="emd_boleto_cup" Type="Int32" />
+          <Property Name="emd_otros" Type="Int32" />
+          <Property Name="emd_airline" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="emd_exc_over" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="emd_exc_precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="emd_exc_piezas" Type="Int32" />
+          <Property Name="emd_consume" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="emd_notas" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="emd_cupon_num" Type="Int32" />
+          <Property Name="emd_subcodigo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="OtrasNotas" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="valorado_metodo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="moneda_fare" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="tkt_ind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="sys_origen" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="original_issue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="res_agent" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="foid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total" Type="Decimal" Precision="21" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="conj_ind" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Endosos" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="VentasCabecera" Relationship="IngresosModel.FK_VentasBoletos_VentasCabecera" FromRole="VentasBoletos" ToRole="VentasCabecera" />
+        </EntityType>
+        <EntityType Name="VentasCabecera">
+          <Key>
+            <PropertyRef Name="Grupo" />
+          </Key>
+          <Property Name="Grupo" Type="Int32" Nullable="false" />
+          <Property Name="Pais" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Origen" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="Ciclo" Type="Int32" />
+          <Property Name="Estado" Type="Byte" />
+          <Property Name="Agente" Type="Int32" />
+          <Property Name="FechaRecepcion" Type="DateTime" Precision="3" />
+          <Property Name="FechaReporte" Type="DateTime" Precision="3" />
+          <Property Name="FechaContable" Type="DateTime" Precision="3" />
+          <Property Name="Moneda" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TipoCambio" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="PeriodoReporte" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="NroTkts" Type="Int32" />
+          <Property Name="NroPtas" Type="Int32" />
+          <Property Name="NroVoids" Type="Int32" />
+          <Property Name="Comision" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IgvComision" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Contado" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Credito" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Canje" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosCargos" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Tarifa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IgvTarifa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosImp" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosIngresos" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtrasComisiones" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosCreditos" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtrosTax" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SaldoDepo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SaldoFactu" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Remark" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaMod" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioPrecierre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaPrecierre" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioConta" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Fechaconta" Type="DateTime" Precision="3" />
+          <Property Name="Notas" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="venta_contado" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="venta_credito" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="venta_directa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="venta_indirecta" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Abierto" Type="Boolean" />
+          <Property Name="UsuarioCierre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCierre" Type="DateTime" Precision="3" />
+          <Property Name="noReportado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Ajustes" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SaldoFinal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="F1" Type="Boolean" />
+          <Property Name="FechaIni" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Agentes" Relationship="IngresosModel.FK_VentasCabecera_AgentesCode" FromRole="VentasCabecera" ToRole="Agentes" />
+          <NavigationProperty Name="VentasBoletos" Relationship="IngresosModel.FK_VentasBoletos_VentasCabecera" FromRole="VentasCabecera" ToRole="VentasBoletos" />
+          <NavigationProperty Name="VentasCabecera_Log" Relationship="IngresosModel.FK_VentasCabecera_Log_VentasCabecera" FromRole="VentasCabecera" ToRole="VentasCabecera_Log" />
+          <NavigationProperty Name="VentasCabeceraNotas" Relationship="IngresosModel.FK_VentasCabeceraNotas_VentasCabecera" FromRole="VentasCabecera" ToRole="VentasCabeceraNotas" />
+          <NavigationProperty Name="VentasCabeceraTotales" Relationship="IngresosModel.FK_VentasCabeceraTotales_VentasCabecera" FromRole="VentasCabecera" ToRole="VentasCabeceraTotales" />
+        </EntityType>
+        <EntityType Name="VentasCabecera_Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Grupo" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Accion" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="FechaReg" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="SysPc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="VentasCabecera" Relationship="IngresosModel.FK_VentasCabecera_Log_VentasCabecera" FromRole="VentasCabecera_Log" ToRole="VentasCabecera" />
+        </EntityType>
+        <EntityType Name="VentasCabeceraNotas">
+          <Key>
+            <PropertyRef Name="Grupo" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Grupo" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nota" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="DateTime" Precision="3" />
+          <Property Name="systemuser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="systempc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="VentasCabecera" Relationship="IngresosModel.FK_VentasCabeceraNotas_VentasCabecera" FromRole="VentasCabeceraNotas" ToRole="VentasCabecera" />
+        </EntityType>
+        <EntityType Name="VentasCabeceraTotales">
+          <Key>
+            <PropertyRef Name="grupo" />
+          </Key>
+          <Property Name="grupo" Type="Int32" Nullable="false" />
+          <Property Name="contado1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="credito1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="canjes1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="ctacje1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="tarifa1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="igvtarifa1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="otingreso1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="otrosimp1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="otcredito1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="comision1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="igvcomision1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="tickets1" Type="Int32" />
+          <Property Name="pta1" Type="Int32" />
+          <Property Name="void1" Type="Int32" />
+          <Property Name="totaltkt1" Type="Int32" />
+          <Property Name="contado2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="credito2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="canjes2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="ctacje2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="ctacje" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="tarifa2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="igvtarifa2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="otingreso2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="otrosimp2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="otcredito2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="otcredito" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="comision2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="igvcomision2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="tickets2" Type="Int32" />
+          <Property Name="pta2" Type="Int32" />
+          <Property Name="void2" Type="Int32" />
+          <Property Name="totaltkt2" Type="Int32" />
+          <Property Name="deposito1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="deposito2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="facturas1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="facturas2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="ncredito" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="con_num_dep_gen" Type="Int32" />
+          <Property Name="con_imp_dep_gen" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="con_num_dep_rec" Type="Int32" />
+          <Property Name="con_imp_dep_rec" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="con_num_fac_gen" Type="Int32" />
+          <Property Name="con_imp_fac_gen" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="con_num_fac_rec" Type="Int32" />
+          <Property Name="con_imp_fac_rec" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="acmapli" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="acmemit" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="admapli" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="admemit" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="tarjeta1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="tarjeta2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="gastos" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="reembolso" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="difere" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="ajuste" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="saldo" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="fechareg" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="VentasCabecera" Relationship="IngresosModel.FK_VentasCabeceraTotales_VentasCabecera" FromRole="VentasCabeceraTotales" ToRole="VentasCabecera" />
+        </EntityType>
+        <Association Name="FK_VentasCabecera_AgentesCode">
+          <End Type="IngresosModel.Agentes" Role="Agentes" Multiplicity="0..1" />
+          <End Type="IngresosModel.VentasCabecera" Role="VentasCabecera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agentes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="VentasCabecera">
+              <PropertyRef Name="Agente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasBoletos_VentasCabecera">
+          <End Type="IngresosModel.VentasCabecera" Role="VentasCabecera" Multiplicity="1" />
+          <End Type="IngresosModel.VentasBoletos" Role="VentasBoletos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VentasCabecera">
+              <PropertyRef Name="Grupo" />
+            </Principal>
+            <Dependent Role="VentasBoletos">
+              <PropertyRef Name="Grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasCabecera_Log_VentasCabecera">
+          <End Type="IngresosModel.VentasCabecera" Role="VentasCabecera" Multiplicity="1" />
+          <End Type="IngresosModel.VentasCabecera_Log" Role="VentasCabecera_Log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VentasCabecera">
+              <PropertyRef Name="Grupo" />
+            </Principal>
+            <Dependent Role="VentasCabecera_Log">
+              <PropertyRef Name="Grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasCabeceraNotas_VentasCabecera">
+          <End Type="IngresosModel.VentasCabecera" Role="VentasCabecera" Multiplicity="1" />
+          <End Type="IngresosModel.VentasCabeceraNotas" Role="VentasCabeceraNotas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VentasCabecera">
+              <PropertyRef Name="Grupo" />
+            </Principal>
+            <Dependent Role="VentasCabeceraNotas">
+              <PropertyRef Name="Grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VentasCabeceraTotales_VentasCabecera">
+          <End Type="IngresosModel.VentasCabecera" Role="VentasCabecera" Multiplicity="1" />
+          <End Type="IngresosModel.VentasCabeceraTotales" Role="VentasCabeceraTotales" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="VentasCabecera">
+              <PropertyRef Name="Grupo" />
+            </Principal>
+            <Dependent Role="VentasCabeceraTotales">
+              <PropertyRef Name="grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -850,6 +1518,254 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
                 <ScalarProperty Name="FechaVuelo" ColumnName="FechaVuelo" />
                 <ScalarProperty Name="Itinerario" ColumnName="Itinerario" />
                 <ScalarProperty Name="IdVuelo" ColumnName="IdVuelo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VentasBoletos">
+            <EntityTypeMapping TypeName="IngresosModel.VentasBoletos">
+              <MappingFragment StoreEntitySet="VentasBoletos">
+                <ScalarProperty Name="Endosos" ColumnName="Endosos" />
+                <ScalarProperty Name="conj_ind" ColumnName="conj_ind" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="foid" ColumnName="foid" />
+                <ScalarProperty Name="res_agent" ColumnName="res_agent" />
+                <ScalarProperty Name="original_issue" ColumnName="original_issue" />
+                <ScalarProperty Name="sys_origen" ColumnName="sys_origen" />
+                <ScalarProperty Name="tkt_ind" ColumnName="tkt_ind" />
+                <ScalarProperty Name="moneda_fare" ColumnName="moneda_fare" />
+                <ScalarProperty Name="valorado_metodo" ColumnName="valorado_metodo" />
+                <ScalarProperty Name="OtrasNotas" ColumnName="OtrasNotas" />
+                <ScalarProperty Name="emd_subcodigo" ColumnName="emd_subcodigo" />
+                <ScalarProperty Name="emd_cupon_num" ColumnName="emd_cupon_num" />
+                <ScalarProperty Name="emd_notas" ColumnName="emd_notas" />
+                <ScalarProperty Name="emd_consume" ColumnName="emd_consume" />
+                <ScalarProperty Name="emd_exc_piezas" ColumnName="emd_exc_piezas" />
+                <ScalarProperty Name="emd_exc_precio" ColumnName="emd_exc_precio" />
+                <ScalarProperty Name="emd_exc_over" ColumnName="emd_exc_over" />
+                <ScalarProperty Name="emd_airline" ColumnName="emd_airline" />
+                <ScalarProperty Name="emd_otros" ColumnName="emd_otros" />
+                <ScalarProperty Name="emd_boleto_cup" ColumnName="emd_boleto_cup" />
+                <ScalarProperty Name="emd_boleto_num" ColumnName="emd_boleto_num" />
+                <ScalarProperty Name="emd_cupon_moneda" ColumnName="emd_cupon_moneda" />
+                <ScalarProperty Name="emd_cupon_imp" ColumnName="emd_cupon_imp" />
+                <ScalarProperty Name="emd_cod_emision" ColumnName="emd_cod_emision" />
+                <ScalarProperty Name="emd_razon" ColumnName="emd_razon" />
+                <ScalarProperty Name="Stat" ColumnName="Stat" />
+                <ScalarProperty Name="TarifaEqui" ColumnName="TarifaEqui" />
+                <ScalarProperty Name="Bsr" ColumnName="Bsr" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="DifExchange" ColumnName="DifExchange" />
+                <ScalarProperty Name="ImpExchange" ColumnName="ImpExchange" />
+                <ScalarProperty Name="NumExchange" ColumnName="NumExchange" />
+                <ScalarProperty Name="Reprice" ColumnName="Reprice" />
+                <ScalarProperty Name="sup_amt" ColumnName="sup_amt" />
+                <ScalarProperty Name="sup_rate" ColumnName="sup_rate" />
+                <ScalarProperty Name="tour_code" ColumnName="tour_code" />
+                <ScalarProperty Name="Trans" ColumnName="Trans" />
+                <ScalarProperty Name="OtroImp" ColumnName="OtroImp" />
+                <ScalarProperty Name="TotTax" ColumnName="TotTax" />
+                <ScalarProperty Name="ruc" ColumnName="ruc" />
+                <ScalarProperty Name="rucnom" ColumnName="rucnom" />
+                <ScalarProperty Name="Valorado" ColumnName="Valorado" />
+                <ScalarProperty Name="Conjuncion" ColumnName="Conjuncion" />
+                <ScalarProperty Name="OtrosTax" ColumnName="OtrosTax" />
+                <ScalarProperty Name="pnr" ColumnName="pnr" />
+                <ScalarProperty Name="IdOtroIngreso" ColumnName="IdOtroIngreso" />
+                <ScalarProperty Name="SysPc" ColumnName="SysPc" />
+                <ScalarProperty Name="SysUser" ColumnName="SysUser" />
+                <ScalarProperty Name="venta_tipo" ColumnName="venta_tipo" />
+                <ScalarProperty Name="FechaMod" ColumnName="FechaMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+                <ScalarProperty Name="Pago4" ColumnName="Pago4" />
+                <ScalarProperty Name="Pago3" ColumnName="Pago3" />
+                <ScalarProperty Name="Pago2" ColumnName="Pago2" />
+                <ScalarProperty Name="Pago1" ColumnName="Pago1" />
+                <ScalarProperty Name="TipoPago4" ColumnName="TipoPago4" />
+                <ScalarProperty Name="TipoPago3" ColumnName="TipoPago3" />
+                <ScalarProperty Name="TipoPago2" ColumnName="TipoPago2" />
+                <ScalarProperty Name="TipoPago1" ColumnName="TipoPago1" />
+                <ScalarProperty Name="OtrosIngresos" ColumnName="OtrosIngresos" />
+                <ScalarProperty Name="IgvComision" ColumnName="IgvComision" />
+                <ScalarProperty Name="Comision" ColumnName="Comision" />
+                <ScalarProperty Name="PorcentajeComm" ColumnName="PorcentajeComm" />
+                <ScalarProperty Name="TaxExo" ColumnName="TaxExo" />
+                <ScalarProperty Name="IgvTarifa" ColumnName="IgvTarifa" />
+                <ScalarProperty Name="TotTarifa" ColumnName="TotTarifa" />
+                <ScalarProperty Name="QSeguridad" ColumnName="QSeguridad" />
+                <ScalarProperty Name="Tarifa" ColumnName="Tarifa" />
+                <ScalarProperty Name="TarifaRef" ColumnName="TarifaRef" />
+                <ScalarProperty Name="CalculoTarifa" ColumnName="CalculoTarifa" />
+                <ScalarProperty Name="RutaRef" ColumnName="RutaRef" />
+                <ScalarProperty Name="NumDoc" ColumnName="NumDoc" />
+                <ScalarProperty Name="TipoDoc" ColumnName="TipoDoc" />
+                <ScalarProperty Name="Promocion" ColumnName="Promocion" />
+                <ScalarProperty Name="BaseTarifa" ColumnName="BaseTarifa" />
+                <ScalarProperty Name="Clase" ColumnName="Clase" />
+                <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+                <ScalarProperty Name="Pasajero" ColumnName="Pasajero" />
+                <ScalarProperty Name="TipoPax" ColumnName="TipoPax" />
+                <ScalarProperty Name="Validador" ColumnName="Validador" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+                <ScalarProperty Name="Forma" ColumnName="Forma" />
+                <ScalarProperty Name="Cia" ColumnName="Cia" />
+                <ScalarProperty Name="TipoBoleto" ColumnName="TipoBoleto" />
+                <ScalarProperty Name="AgenteBol" ColumnName="AgenteBol" />
+                <ScalarProperty Name="Agente" ColumnName="Agente" />
+                <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+                <ScalarProperty Name="Boleto" ColumnName="Boleto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VentasCabecera">
+            <EntityTypeMapping TypeName="IngresosModel.VentasCabecera">
+              <MappingFragment StoreEntitySet="VentasCabecera">
+                <ScalarProperty Name="FechaIni" ColumnName="FechaIni" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="SaldoFinal" ColumnName="SaldoFinal" />
+                <ScalarProperty Name="Ajustes" ColumnName="Ajustes" />
+                <ScalarProperty Name="noReportado" ColumnName="noReportado" />
+                <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+                <ScalarProperty Name="UsuarioCierre" ColumnName="UsuarioCierre" />
+                <ScalarProperty Name="Abierto" ColumnName="Abierto" />
+                <ScalarProperty Name="venta_indirecta" ColumnName="venta_indirecta" />
+                <ScalarProperty Name="venta_directa" ColumnName="venta_directa" />
+                <ScalarProperty Name="venta_credito" ColumnName="venta_credito" />
+                <ScalarProperty Name="venta_contado" ColumnName="venta_contado" />
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+                <ScalarProperty Name="Fechaconta" ColumnName="Fechaconta" />
+                <ScalarProperty Name="UsuarioConta" ColumnName="UsuarioConta" />
+                <ScalarProperty Name="FechaPrecierre" ColumnName="FechaPrecierre" />
+                <ScalarProperty Name="UsuarioPrecierre" ColumnName="UsuarioPrecierre" />
+                <ScalarProperty Name="FechaMod" ColumnName="FechaMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="SaldoFactu" ColumnName="SaldoFactu" />
+                <ScalarProperty Name="SaldoDepo" ColumnName="SaldoDepo" />
+                <ScalarProperty Name="OtrosTax" ColumnName="OtrosTax" />
+                <ScalarProperty Name="OtrosCreditos" ColumnName="OtrosCreditos" />
+                <ScalarProperty Name="OtrasComisiones" ColumnName="OtrasComisiones" />
+                <ScalarProperty Name="OtrosIngresos" ColumnName="OtrosIngresos" />
+                <ScalarProperty Name="OtrosImp" ColumnName="OtrosImp" />
+                <ScalarProperty Name="IgvTarifa" ColumnName="IgvTarifa" />
+                <ScalarProperty Name="Tarifa" ColumnName="Tarifa" />
+                <ScalarProperty Name="OtrosCargos" ColumnName="OtrosCargos" />
+                <ScalarProperty Name="Canje" ColumnName="Canje" />
+                <ScalarProperty Name="Credito" ColumnName="Credito" />
+                <ScalarProperty Name="Contado" ColumnName="Contado" />
+                <ScalarProperty Name="IgvComision" ColumnName="IgvComision" />
+                <ScalarProperty Name="Comision" ColumnName="Comision" />
+                <ScalarProperty Name="NroVoids" ColumnName="NroVoids" />
+                <ScalarProperty Name="NroPtas" ColumnName="NroPtas" />
+                <ScalarProperty Name="NroTkts" ColumnName="NroTkts" />
+                <ScalarProperty Name="PeriodoReporte" ColumnName="PeriodoReporte" />
+                <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="FechaContable" ColumnName="FechaContable" />
+                <ScalarProperty Name="FechaReporte" ColumnName="FechaReporte" />
+                <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+                <ScalarProperty Name="Agente" ColumnName="Agente" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Ciclo" ColumnName="Ciclo" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Origen" ColumnName="Origen" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VentasCabecera_Log">
+            <EntityTypeMapping TypeName="IngresosModel.VentasCabecera_Log">
+              <MappingFragment StoreEntitySet="VentasCabecera_Log">
+                <ScalarProperty Name="SysPc" ColumnName="SysPc" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="Accion" ColumnName="Accion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VentasCabeceraNotas">
+            <EntityTypeMapping TypeName="IngresosModel.VentasCabeceraNotas">
+              <MappingFragment StoreEntitySet="VentasCabeceraNotas">
+                <ScalarProperty Name="systempc" ColumnName="systempc" />
+                <ScalarProperty Name="systemuser" ColumnName="systemuser" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VentasCabeceraTotales">
+            <EntityTypeMapping TypeName="IngresosModel.VentasCabeceraTotales">
+              <MappingFragment StoreEntitySet="VentasCabeceraTotales">
+                <ScalarProperty Name="fechareg" ColumnName="fechareg" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="ajuste" ColumnName="ajuste" />
+                <ScalarProperty Name="difere" ColumnName="difere" />
+                <ScalarProperty Name="reembolso" ColumnName="reembolso" />
+                <ScalarProperty Name="gastos" ColumnName="gastos" />
+                <ScalarProperty Name="tarjeta2" ColumnName="tarjeta2" />
+                <ScalarProperty Name="tarjeta1" ColumnName="tarjeta1" />
+                <ScalarProperty Name="admemit" ColumnName="admemit" />
+                <ScalarProperty Name="admapli" ColumnName="admapli" />
+                <ScalarProperty Name="acmemit" ColumnName="acmemit" />
+                <ScalarProperty Name="acmapli" ColumnName="acmapli" />
+                <ScalarProperty Name="con_imp_fac_rec" ColumnName="con_imp_fac_rec" />
+                <ScalarProperty Name="con_num_fac_rec" ColumnName="con_num_fac_rec" />
+                <ScalarProperty Name="con_imp_fac_gen" ColumnName="con_imp_fac_gen" />
+                <ScalarProperty Name="con_num_fac_gen" ColumnName="con_num_fac_gen" />
+                <ScalarProperty Name="con_imp_dep_rec" ColumnName="con_imp_dep_rec" />
+                <ScalarProperty Name="con_num_dep_rec" ColumnName="con_num_dep_rec" />
+                <ScalarProperty Name="con_imp_dep_gen" ColumnName="con_imp_dep_gen" />
+                <ScalarProperty Name="con_num_dep_gen" ColumnName="con_num_dep_gen" />
+                <ScalarProperty Name="ncredito" ColumnName="ncredito" />
+                <ScalarProperty Name="facturas2" ColumnName="facturas2" />
+                <ScalarProperty Name="facturas1" ColumnName="facturas1" />
+                <ScalarProperty Name="deposito2" ColumnName="deposito2" />
+                <ScalarProperty Name="deposito1" ColumnName="deposito1" />
+                <ScalarProperty Name="totaltkt2" ColumnName="totaltkt2" />
+                <ScalarProperty Name="void2" ColumnName="void2" />
+                <ScalarProperty Name="pta2" ColumnName="pta2" />
+                <ScalarProperty Name="tickets2" ColumnName="tickets2" />
+                <ScalarProperty Name="igvcomision2" ColumnName="igvcomision2" />
+                <ScalarProperty Name="comision2" ColumnName="comision2" />
+                <ScalarProperty Name="otcredito" ColumnName="otcredito" />
+                <ScalarProperty Name="otcredito2" ColumnName="otcredito2" />
+                <ScalarProperty Name="otrosimp2" ColumnName="otrosimp2" />
+                <ScalarProperty Name="otingreso2" ColumnName="otingreso2" />
+                <ScalarProperty Name="igvtarifa2" ColumnName="igvtarifa2" />
+                <ScalarProperty Name="tarifa2" ColumnName="tarifa2" />
+                <ScalarProperty Name="ctacje" ColumnName="ctacje" />
+                <ScalarProperty Name="ctacje2" ColumnName="ctacje2" />
+                <ScalarProperty Name="canjes2" ColumnName="canjes2" />
+                <ScalarProperty Name="credito2" ColumnName="credito2" />
+                <ScalarProperty Name="contado2" ColumnName="contado2" />
+                <ScalarProperty Name="totaltkt1" ColumnName="totaltkt1" />
+                <ScalarProperty Name="void1" ColumnName="void1" />
+                <ScalarProperty Name="pta1" ColumnName="pta1" />
+                <ScalarProperty Name="tickets1" ColumnName="tickets1" />
+                <ScalarProperty Name="igvcomision1" ColumnName="igvcomision1" />
+                <ScalarProperty Name="comision1" ColumnName="comision1" />
+                <ScalarProperty Name="otcredito1" ColumnName="otcredito1" />
+                <ScalarProperty Name="otrosimp1" ColumnName="otrosimp1" />
+                <ScalarProperty Name="otingreso1" ColumnName="otingreso1" />
+                <ScalarProperty Name="igvtarifa1" ColumnName="igvtarifa1" />
+                <ScalarProperty Name="tarifa1" ColumnName="tarifa1" />
+                <ScalarProperty Name="ctacje1" ColumnName="ctacje1" />
+                <ScalarProperty Name="canjes1" ColumnName="canjes1" />
+                <ScalarProperty Name="credito1" ColumnName="credito1" />
+                <ScalarProperty Name="contado1" ColumnName="contado1" />
+                <ScalarProperty Name="grupo" ColumnName="grupo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
