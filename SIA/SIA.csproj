@@ -700,7 +700,9 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
@@ -711,7 +713,6 @@
     <Compile Include="Controllers\AgentesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Controllers\VuelosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -756,6 +757,9 @@
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UsuarioCE.cs" />
+    <Compile Include="Models\Vuelos.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -786,7 +790,6 @@
     <Content Include="Views\Agentes\Details.cshtml" />
     <Content Include="Views\Agentes\Edit.cshtml" />
     <Content Include="Views\Agentes\Index.cshtml" />
-    <Content Include="Views\Vuelos\ListaVuelos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
