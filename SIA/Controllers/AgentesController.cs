@@ -15,19 +15,14 @@ namespace SIA.Controllers
     {
         private IngresosEntities db = new IngresosEntities();
 
-        // GET: Agentes
-        //public ActionResult Index()
-        //{
-        //    return View(db.Agentes.ToList()); CLGR_01/16/1989
-        //}
 
-        [OutputCache(Duration = 360)]
-        public ActionResult Index()
+        //[OutputCache(Duration = 360)]
+
+        public ActionResult ListaAgentes()
         {
-            
             using (var db = new IngresosEntities())
             {
-                
+
                 try
 
                 {
@@ -52,6 +47,7 @@ namespace SIA.Controllers
                                           Telefono1 = AG.Telefono1
                                       };
                     //String valor =  informacion.FirstOrDefault().ToString();
+
                     return View(informacion.ToList().Take(10).OrderByDescending(ag => ag.Codigo));
 
                 }
@@ -61,8 +57,26 @@ namespace SIA.Controllers
                 }
 
             }
+        }
+    
+
+        public ActionResult Index()
+        {
+
+            RedirectToAction("TipoAgentes");
+            return View();
+            
             
         }
+
+        public ActionResult TipoAgentes()
+        {
+            return View();
+        }
+
+        
+
+
 
         // GET: Agentes/Details/5
         public ActionResult Details(int? id)
