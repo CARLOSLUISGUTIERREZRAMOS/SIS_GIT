@@ -159,10 +159,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Img_Company\dev.png" />
-    <Content Include="Content\Img_Company\icostar.jpg" />
-    <Content Include="Content\Img_Company\fondo-starperu.png" />
-    <Content Include="Content\Img_Company\logo-starperu.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -693,11 +689,6 @@
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
-    <None Include="Properties\PublishProfiles\FolderProfile5.pubxml" />
-    <None Include="Properties\PublishProfiles\FolderProfile6.pubxml" />
-    <None Include="Properties\PublishProfiles\FolderProfile7.pubxml" />
-    <None Include="Properties\PublishProfiles\FolderProfile8.pubxml" />
-    <None Include="Properties\PublishProfiles\FolderProfile9.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\AdminLTE\Vuelos\vuelo.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -710,8 +701,9 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\ReporteVentas\ReporteVentas.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
@@ -722,7 +714,6 @@
     <Compile Include="Controllers\AgentesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Controllers\VuelosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -767,21 +758,6 @@
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UsuarioCE.cs" />
-    <Compile Include="Models\VentasBoletos.cs">
-      <DependentUpon>ModelIngresos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VentasCabecera.cs">
-      <DependentUpon>ModelIngresos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VentasCabeceraNotas.cs">
-      <DependentUpon>ModelIngresos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VentasCabeceraTotales.cs">
-      <DependentUpon>ModelIngresos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VentasCabecera_Log.cs">
-      <DependentUpon>ModelIngresos.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Vuelos.cs">
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
@@ -815,7 +791,6 @@
     <Content Include="Views\Agentes\Details.cshtml" />
     <Content Include="Views\Agentes\Edit.cshtml" />
     <Content Include="Views\Agentes\Index.cshtml" />
-    <Content Include="Views\Vuelos\ListaVuelos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -825,6 +800,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Img_Company\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
