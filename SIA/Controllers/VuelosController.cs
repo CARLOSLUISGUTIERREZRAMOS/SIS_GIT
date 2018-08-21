@@ -9,11 +9,6 @@ namespace SIA.Controllers
     public class VuelosController : Controller
     {
         // GET: Vuelos
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult ListaVuelos()
         {
             return View();

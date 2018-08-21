@@ -14,7 +14,7 @@ namespace SIA.Models
     
     public partial class AgentesMaster
     {
-        public int CodigoMaster { get; set; }
+        public int  CodigoMaster { get; set; }
         public string Nombre { get; set; }
         public string Analitico { get; set; }
         public string UsuarioReg { get; set; }

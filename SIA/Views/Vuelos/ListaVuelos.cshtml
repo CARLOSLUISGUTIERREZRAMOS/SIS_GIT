@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
 
     if (Session["IdUsuario"] == null)
     {
@@ -11,17 +10,79 @@
 
 
     //Relación ubicacion (TEXTO - ? -ICONO)
-}
-<div class="form-group">
-    <label>Fecha:</label>
 
-    <div class="input-group">
-        <div class="input-group-addon">
-            <i class="fa fa-calendar"></i>
-        </div>
-        <input type="text" class="form-control pull-right" id="reservation">
-    </div>
-    <!-- /.input group -->
-</div>
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+    new Crumb("Principal","","fa-home")
+});
+}
+
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-lg-3">
+                    <label>Rango Fecha:</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="text" class="form-control pull-right" id="reservation">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Estado:</label>
+                        <input type="text" class="form-control" id="estado_vuelo">
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="col-lg-3">
+                        <label>Ruta Ida:</label>
+                        <input type="text" class="form-control" id="ruta_ida">
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label color="white">Ruta Vuelta</label>
+                        <input type="text" class="form-control" id="ruta_vuelta">
+                    </div>
+                    <div class="col-lg-4">
+                        <label></label>
+                        <button type="button" class="btn btn-block btn-danger">Listar</button>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="box-body">
+                <table id="tabla_dinamica" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Lista de Vuelos</th>
+                            <th>Fecha</th>
+                            <th>Vuelo</th>
+                            <th>Orden</th>
+                            <th>De</th>
+                            <th>A</th>
+                            <th>Vlo. Nro</th>
+                            <th>ADL</th>
+                            <th>CHD</th>
+                            <th>INF</th>
+                            <th>Free</th>
+                            <th>Interline</th>
+                            <th>Total</th>
+                            <th>TOT</th>
+                            <th>Uso</th>
+                            <th>DIF.</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+           
 
 

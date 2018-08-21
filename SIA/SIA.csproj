@@ -690,6 +690,7 @@
     <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\AdminLTE\Vuelos\vuelo.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -756,6 +757,9 @@
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UsuarioCE.cs" />
+    <Compile Include="Models\Vuelos.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

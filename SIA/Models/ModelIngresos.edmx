@@ -178,6 +178,42 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <Property Name="IdTipoUsuario" Type="int" />
           <Property Name="swAcceso" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Vuelos">
+          <Key>
+            <PropertyRef Name="IdVuelo" />
+          </Key>
+          <Property Name="IdVuelo" Type="int" Nullable="false" />
+          <Property Name="Itinerario" Type="char" MaxLength="5" />
+          <Property Name="FechaVuelo" Type="datetime" />
+          <Property Name="Vuelo" Type="char" MaxLength="5" />
+          <Property Name="Orden" Type="char" MaxLength="1" />
+          <Property Name="Carrier" Type="char" MaxLength="2" />
+          <Property Name="NroVuelo" Type="varchar" MaxLength="5" />
+          <Property Name="HoraSalida" Type="datetime" />
+          <Property Name="HoraLlegada" Type="datetime" />
+          <Property Name="LocOrigen" Type="varchar" MaxLength="3" />
+          <Property Name="LocDestino" Type="varchar" MaxLength="3" />
+          <Property Name="Stop" Type="char" MaxLength="3" />
+          <Property Name="TipoVuelo" Type="smallint" />
+          <Property Name="Equipo" Type="char" MaxLength="15" />
+          <Property Name="Matricula" Type="char" MaxLength="10" />
+          <Property Name="PaxADL" Type="smallint" />
+          <Property Name="PaxCHD" Type="smallint" />
+          <Property Name="PaxINF" Type="smallint" />
+          <Property Name="PaxFree" Type="smallint" />
+          <Property Name="PaxINT" Type="smallint" />
+          <Property Name="PaxTotal" Type="smallint" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="20" />
+          <Property Name="FechaReg" Type="datetime" />
+          <Property Name="Estado" Type="tinyint" />
+          <Property Name="UsuarioCierre" Type="varchar" MaxLength="20" />
+          <Property Name="FechaCierre" Type="datetime" />
+          <Property Name="UsuarioConta" Type="varchar" MaxLength="20" />
+          <Property Name="FechaConta" Type="datetime" />
+          <Property Name="Notas" Type="varchar" MaxLength="50" />
+          <Property Name="NotasCierre" Type="varchar" MaxLength="100" />
+          <Property Name="FechaContable" Type="datetime" />
+        </EntityType>
         <Association Name="FK_Agentes_TipoAgencia">
           <End Role="TipoAgencia" Type="Self.TipoAgencia" Multiplicity="0..1" />
           <End Role="Agentes" Type="Self.Agentes" Multiplicity="*" />
@@ -247,6 +283,7 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <EntitySet Name="TipoAgencia" EntityType="Self.TipoAgencia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoAgente" EntityType="Self.TipoAgente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vuelos" EntityType="Self.Vuelos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AgentesTmp" EntityType="Self.AgentesTmp" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [AgentesTmp].[Codigo] AS [Codigo], 
@@ -342,6 +379,7 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
             <End Role="TipoAgente" EntitySet="TipoAgente" />
             <End Role="Agentes" EntitySet="Agentes" />
           </AssociationSet>
+          <EntitySet Name="Vuelos" EntityType="IngresosModel.Vuelos" />
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -555,6 +593,42 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Vuelos">
+          <Key>
+            <PropertyRef Name="IdVuelo" />
+          </Key>
+          <Property Name="IdVuelo" Type="Int32" Nullable="false" />
+          <Property Name="Itinerario" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="FechaVuelo" Type="DateTime" Precision="3" />
+          <Property Name="Vuelo" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Orden" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Carrier" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="NroVuelo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="HoraSalida" Type="DateTime" Precision="3" />
+          <Property Name="HoraLlegada" Type="DateTime" Precision="3" />
+          <Property Name="LocOrigen" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="LocDestino" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Stop" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TipoVuelo" Type="Int16" />
+          <Property Name="Equipo" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="Matricula" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="PaxADL" Type="Int16" />
+          <Property Name="PaxCHD" Type="Int16" />
+          <Property Name="PaxINF" Type="Int16" />
+          <Property Name="PaxFree" Type="Int16" />
+          <Property Name="PaxINT" Type="Int16" />
+          <Property Name="PaxTotal" Type="Int16" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="Byte" />
+          <Property Name="UsuarioCierre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCierre" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioConta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaConta" Type="DateTime" Precision="3" />
+          <Property Name="Notas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NotasCierre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FechaContable" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -739,6 +813,43 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
               <MappingFragment StoreEntitySet="TipoAgente">
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vuelos">
+            <EntityTypeMapping TypeName="IngresosModel.Vuelos">
+              <MappingFragment StoreEntitySet="Vuelos">
+                <ScalarProperty Name="FechaContable" ColumnName="FechaContable" />
+                <ScalarProperty Name="NotasCierre" ColumnName="NotasCierre" />
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+                <ScalarProperty Name="FechaConta" ColumnName="FechaConta" />
+                <ScalarProperty Name="UsuarioConta" ColumnName="UsuarioConta" />
+                <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+                <ScalarProperty Name="UsuarioCierre" ColumnName="UsuarioCierre" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="PaxTotal" ColumnName="PaxTotal" />
+                <ScalarProperty Name="PaxINT" ColumnName="PaxINT" />
+                <ScalarProperty Name="PaxFree" ColumnName="PaxFree" />
+                <ScalarProperty Name="PaxINF" ColumnName="PaxINF" />
+                <ScalarProperty Name="PaxCHD" ColumnName="PaxCHD" />
+                <ScalarProperty Name="PaxADL" ColumnName="PaxADL" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Equipo" ColumnName="Equipo" />
+                <ScalarProperty Name="TipoVuelo" ColumnName="TipoVuelo" />
+                <ScalarProperty Name="Stop" ColumnName="Stop" />
+                <ScalarProperty Name="LocDestino" ColumnName="LocDestino" />
+                <ScalarProperty Name="LocOrigen" ColumnName="LocOrigen" />
+                <ScalarProperty Name="HoraLlegada" ColumnName="HoraLlegada" />
+                <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+                <ScalarProperty Name="NroVuelo" ColumnName="NroVuelo" />
+                <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Vuelo" ColumnName="Vuelo" />
+                <ScalarProperty Name="FechaVuelo" ColumnName="FechaVuelo" />
+                <ScalarProperty Name="Itinerario" ColumnName="Itinerario" />
+                <ScalarProperty Name="IdVuelo" ColumnName="IdVuelo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

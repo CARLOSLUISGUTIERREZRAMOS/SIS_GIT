@@ -18,6 +18,9 @@ namespace SIA
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/vuelo").Include(
+                        "~/Scripts/Vuelos/vuelo.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                       "~/Scripts/jquery.validate*"));
 

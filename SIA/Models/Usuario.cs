@@ -23,7 +23,7 @@ namespace SIA.Models
         public Nullable<System.DateTime> UserFecha { get; set; }
         public string UserLoc { get; set; }
         public Nullable<int> UserAge { get; set; }
-        public string UserNom { get; set; } 
+        public string UserNom { get; set; }
         public string UserApe { get; set; }
         public string UserCar { get; set; }
         public string UserAre { get; set; }
