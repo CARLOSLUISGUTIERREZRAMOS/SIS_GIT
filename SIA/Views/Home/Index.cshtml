@@ -5,7 +5,7 @@
         Response.Redirect("~/Home/Login");
     }
     // ESTABLECEMOS EL TITULO DEL CONTENIDO PRINCIPAL
-    ViewBag.Title = "MAIN";
+    ViewBag.Title = "PRINCIPAL";
     // TEXTO ADICIONAL DEL TITULO (MENOR TAMAÑO)
 
 
@@ -17,26 +17,32 @@ new Crumb("Principal","","fa-home")
 }
 <div ng-view class="row">
     <div class="col-xs-12">
-        <div class="box">
+        <div class="box box-danger">
 
             <div class="box-header with-border">
-                titulo
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default" title="Consulta de Boletos"><i class="fa fa-search"></i></button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-archive"></i></button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-edit"></i></button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-list-alt"></i></button>
+                </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="background-image: url('/Content/Img_Company/fondo-starperu.png'); width: 100%; height: 100vh; ">
+                
 
 
-                MSJ TEST
 
+
+                </div>
+
+                <div id="footerDetalle" class="box-footer">
+                    @{
+
+                    }
+                </div>
 
             </div>
-
-            <div id="footerDetalle" class="box-footer">
-                @{
-
-                }
-            </div>
-
-        </div>
     </div>
 </div>
+
 
