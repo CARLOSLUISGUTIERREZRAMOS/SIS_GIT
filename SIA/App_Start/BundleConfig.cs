@@ -70,8 +70,8 @@ namespace SIA
             bundles.Add(new StyleBundle("~/Content/fontawesome").Include(
                 "~/Content/fontawesome/font-awesome.css"));
             
-            bundles.Add(new StyleBundle("~/Content/skinblue").Include(
-                "~/Content/AdminLTE/skins/skin-blue.css"));
+            bundles.Add(new StyleBundle("~/Content/skinred").Include(
+                "~/Content/AdminLTE/skins/skin-red.css"));
 
             bundles.Add(new StyleBundle("~/Content/allskins").Include(
                 "~/Content/AdminLTE/skins/_all-skins.min.css"));
