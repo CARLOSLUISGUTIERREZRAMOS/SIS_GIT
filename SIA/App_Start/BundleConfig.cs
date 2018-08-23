@@ -21,6 +21,9 @@ namespace SIA
             bundles.Add(new ScriptBundle("~/bundles/sparkline").Include(
                         "~/Scripts/AdminLTE/plugins/sparkline/jquery.sparkline.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/rptaventa").Include(
+                        "~/Scripts/ReporteVentas/ReporteVentas.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jvectormap").Include(
                         "~/Scripts/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js",
                         "~/Scripts/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"));

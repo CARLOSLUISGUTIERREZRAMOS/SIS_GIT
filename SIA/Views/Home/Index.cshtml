@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
 
     if (Session["IdUsuario"] == null)
     {
@@ -84,14 +85,16 @@ new Crumb("Principal","","fa-home")
 
             </div>
 
-                <div id="footerDetalle" class="box-footer">
-                    @{
+            <div id="footerDetalle" class="box-footer">
+                @{
 
-                    }
-                </div>
-
+                }
             </div>
+
+        </div>
     </div>
 </div>
+
+@Scripts.Render("~/bundles/rptaventa")
 
 
