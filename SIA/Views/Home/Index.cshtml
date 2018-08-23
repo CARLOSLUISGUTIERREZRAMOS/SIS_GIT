@@ -1,6 +1,4 @@
-﻿
-@{
-
+﻿@{
     if (Session["IdUsuario"] == null)
     {
         Response.Redirect("~/Home/Login");
@@ -8,7 +6,6 @@
     // ESTABLECEMOS EL TITULO DEL CONTENIDO PRINCIPAL
     ViewBag.Title = "PRINCIPAL";
     // TEXTO ADICIONAL DEL TITULO (MENOR TAMAÑO)
-
 
     //Relación ubicacion (TEXTO - ? -ICONO)
 
@@ -20,81 +17,10 @@ new Crumb("Principal","","fa-home")
     <div class="col-xs-12">
         <div class="box box-danger">
 
-            <div class="box-header with-border">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default" title="Consulta de Boletos" id="consulta_boletos"><i class="fa fa-search"></i></button>
-                    <button type="button" class="btn btn-default" title="Reportes de Venta" id="btn_reporteVentas"><i class="fa fa-archive"></i></button>
-                    <button type="button" class="btn btn-default" title="Registro de Vuelos"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-default" title="Lista de Vuelos"><i class="fa fa-list-alt"></i></button>
-                </div>
-            </div>
-            <div class="box-body" style="background-image: url('/Content/Img_Company/fondo-starperu.png'); width: 100%; height: 100vh; ">
-
-                <div id="nav_reportesVentas" class="nav-tabs-custom">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#reportes" data-toggle="tab" aria-expanded="true">Reportes</a></li>
-                        <li class=""><a href="#boletos" data-toggle="tab" aria-expanded="false">Boletos</a></li>
-                        <li><a href="#facturas" data-toggle="tab">Facturas</a></li>
-                        <li><a href="#depositos" data-toggle="tab">Depositos</a></li>
-                        <li><a href="#tarjetas" data-toggle="tab">Tarjetas</a></li>
-                        <li><a href="#adm" data-toggle="tab">ADM</a></li>
-                        <li><a href="#acm" data-toggle="tab">ACM</a></li>
-                        <li><a href="#gastos" data-toggle="tab">Gastos</a></li>
-                        <li><a href="#reembolsos" data-toggle="tab">Reembolsos</a></li>
-                        <li><a href="#cuadre" data-toggle="tab">Cuadre</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="boletos">
-
-                        </div>
-
-                        <div class="tab-pane" id="timeline">
-
-                        </div>
-
-                        <div class="tab-pane" id="facturas">
-
-                        </div>
-
-                        <div class="tab-pane" id="depositos">
-
-                        </div>
-                        <div class="tab-pane" id="tarjetas">
-
-                        </div>
-                        <div class="tab-pane" id="adm">
-
-                        </div>
-                        <div class="tab-pane" id="acm">
-
-                        </div>
-                        <div class="tab-pane" id="gastos">
-
-                        </div>
-                        <div class="tab-pane" id="reembolsos">
-
-                        </div>
-                        <div class="tab-pane" id="cuadre">
-
-                        </div>
-                    </div>
-                    <!-- /.tab-content -->
-                </div>
-
-
-
-            </div>
-
-            <div id="footerDetalle" class="box-footer">
-                @{
-
-                }
-            </div>
-
         </div>
     </div>
 </div>
 
-@Scripts.Render("~/bundles/rptaventa")
+
 
 

@@ -25,7 +25,7 @@ namespace SIA
                         "~/Scripts/ReporteVentas/ReporteVentas.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jvectormap").Include(
-                        "~/Scripts/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js",
+                        "~/Scripts/AdminLTE/plugins/jvectormap/jquejvectormap-1.2.2.min.js",
                         "~/Scripts/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/daterangepicker").Include(

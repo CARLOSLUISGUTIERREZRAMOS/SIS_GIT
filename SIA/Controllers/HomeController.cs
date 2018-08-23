@@ -14,7 +14,16 @@ namespace SIA.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+
+            /*
+             * Aqui entraremos en una pequeña logica evaluando el tipo
+             * de usuario que ingrese al sistema, por ejemplo si el 
+             * usuario es un personal del área de carga deberá redireccionarse 
+             * al controlador de Carga de lo contrario deberá ser dirigido
+             * al controlador correspondiente siguiendo la instruccion:
+             */
+
+            return RedirectToAction("ReportesDeVenta", "Ventas");
         }
 
         public ActionResult Login() 
