@@ -18,6 +18,11 @@ namespace SIA
             bundles.Add(new ScriptBundle("~/bundles/fastclick").Include(
                         "~/Scripts/AdminLTE/plugins/fastclick/fastclick.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
+                        "~/Scripts/AdminLTE/plugins/input-mask/jquery.inputmask.js",
+                        "~/Scripts/AdminLTE/plugins/input-mask/jquery.inputmask.date.extensions.js"
+                        ));
+
             bundles.Add(new ScriptBundle("~/bundles/sparkline").Include(
                         "~/Scripts/AdminLTE/plugins/sparkline/jquery.sparkline.min.js"));
 

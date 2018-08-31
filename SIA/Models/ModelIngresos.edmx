@@ -136,6 +136,20 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <Property Name="Flag" Type="smallint" />
           <Property Name="codEstado" Type="varchar" MaxLength="2" />
         </EntityType>
+        <EntityType Name="PubOrigen">
+          <Key>
+            <PropertyRef Name="IdOrigen" />
+          </Key>
+          <Property Name="IdOrigen" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Orden" Type="char" MaxLength="2" />
+          <Property Name="NomOrigen" Type="varchar" MaxLength="50" />
+          <Property Name="IdBsp" Type="bit" />
+          <Property Name="Defecto" Type="bit" />
+          <Property Name="Pais" Type="varchar" MaxLength="2" />
+          <Property Name="Banco" Type="varchar" MaxLength="2" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="BSP" Type="int" />
+        </EntityType>
         <EntityType Name="TipoAgencia">
           <Key>
             <PropertyRef Name="Codigo" />
@@ -584,6 +598,7 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <EntitySet Name="AgentesMaster" EntityType="Self.AgentesMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AgentesSubAgentes" EntityType="Self.AgentesSubAgentes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AgentesTarjetas" EntityType="Self.AgentesTarjetas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PubOrigen" EntityType="Self.PubOrigen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoAgencia" EntityType="Self.TipoAgencia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoAgente" EntityType="Self.TipoAgente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
@@ -734,6 +749,7 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
             <End Role="VentasCabecera" EntitySet="VentasCabecera" />
             <End Role="VentasCabeceraTotales" EntitySet="VentasCabeceraTotales" />
           </AssociationSet>
+          <EntitySet Name="PubOrigen" EntityType="IngresosModel.PubOrigen" />
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -1297,6 +1313,20 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="PubOrigen">
+          <Key>
+            <PropertyRef Name="IdOrigen" />
+          </Key>
+          <Property Name="IdOrigen" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Orden" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="NomOrigen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdBsp" Type="Boolean" />
+          <Property Name="Defecto" Type="Boolean" />
+          <Property Name="Pais" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Banco" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="BSP" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1766,6 +1796,21 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
                 <ScalarProperty Name="credito1" ColumnName="credito1" />
                 <ScalarProperty Name="contado1" ColumnName="contado1" />
                 <ScalarProperty Name="grupo" ColumnName="grupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PubOrigen">
+            <EntityTypeMapping TypeName="IngresosModel.PubOrigen">
+              <MappingFragment StoreEntitySet="PubOrigen">
+                <ScalarProperty Name="BSP" ColumnName="BSP" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Banco" ColumnName="Banco" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Defecto" ColumnName="Defecto" />
+                <ScalarProperty Name="IdBsp" ColumnName="IdBsp" />
+                <ScalarProperty Name="NomOrigen" ColumnName="NomOrigen" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="IdOrigen" ColumnName="IdOrigen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
