@@ -27,7 +27,8 @@ namespace SIA
                         "~/Scripts/AdminLTE/plugins/sparkline/jquery.sparkline.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/rptaventa").Include(
-                        "~/Scripts/ReporteVentas/ReporteVentas.js"));
+                        "~/Scripts/ReporteVentas/ReporteVentas.js",
+                        "~/Scripts/PubOrigen/PubOrigen.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jvectormap").Include(
                         "~/Scripts/AdminLTE/plugins/jvectormap/jquejvectormap-1.2.2.min.js",
@@ -59,6 +60,8 @@ namespace SIA
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                       "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/unobtrusive").Include(
+                      "~/Scripts/jquery.unobtrusive-ajax.js"));
 
             // Utilice la versión de desarrollo de Modernizr para desarrollar y obtener información. De este modo, estará
             // para la producción, use la herramienta de compilación disponible en https://modernizr.com para seleccionar solo las pruebas que necesite.
