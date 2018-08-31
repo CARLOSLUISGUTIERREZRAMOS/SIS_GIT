@@ -25,7 +25,6 @@ namespace SIA.Controllers
         {
             using (var db = new IngresosEntities())
             {
-
                 var query = db.PubOrigen.ToList();
                 return Json(new SelectList(query,"IdOrigen","NomOrigen"));
             }
