@@ -28,7 +28,9 @@ namespace SIA
 
             bundles.Add(new ScriptBundle("~/bundles/rptaventa").Include(
                         "~/Scripts/ReporteVentas/ReporteVentas.js",
-                        "~/Scripts/PubOrigen/PubOrigen.js"));
+                        "~/Scripts/PubOrigen/PubOrigen.js",
+                        "~/Scripts/TipoAgente/TipoAgente.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jvectormap").Include(
                         "~/Scripts/AdminLTE/plugins/jvectormap/jquejvectormap-1.2.2.min.js",

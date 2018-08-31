@@ -7,36 +7,36 @@ using System.Net;
 using System.Data.Entity.Core.Objects;
 using System.Web.Mvc;
 using SIA.Models;
-
 namespace SIA.Controllers
 {
-    public class PubOrigenController : Controller
+    public class TipoAgenteController : Controller
     {
 
         private IngresosEntities db = new IngresosEntities();
-        
-        // GET: PubOrigen
+        // GET: TipoAgente
         public ActionResult Index()
         {
             return View();
         }
 
-        public JsonResult BuscarTipoVentas()
+        public JsonResult BuscarTipoAgentes()
         {
-            using (var db = new IngresosEntities())
+
+            using ( var db = this.db)
             {
                 try
                 {
-                    var query = db.PubOrigen.ToList();
-                    return Json(new SelectList(query, "IdOrigen", "NomOrigen"));
+                    var query = db.TipoAgente.ToList();
+                    return Json(new SelectList(query, "IdTipo", "Nombre"));
                 }
-                catch (Exception e)
+                catch(Exception e)
                 {
                     return null;
                 }
 
 
             }
+
         }
     }
 }

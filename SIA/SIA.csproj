@@ -721,6 +721,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\PubOrigen\PubOrigen.js" />
     <Content Include="Scripts\ReporteVentas\ReporteVentas.js" />
+    <Content Include="Scripts\TipoAgente\TipoAgente.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -734,6 +735,7 @@
     <Compile Include="Controllers\AgentesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PubOrigenController.cs" />
+    <Compile Include="Controllers\TipoAgenteController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VentasController.cs" />
     <Compile Include="Controllers\VuelosController.cs" />
@@ -845,6 +847,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\PubOrigen\" />
+    <Folder Include="Views\TipoAgente\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
