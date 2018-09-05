@@ -19,7 +19,7 @@ namespace SIA.Controllers
             return View();
         }
 
-        public JsonResult BuscarTipoAgentes()
+        public JsonResult GetAll()
         {
 
             using ( var db = this.db)

@@ -733,6 +733,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminLteController.cs" />
     <Compile Include="Controllers\AgentesController.cs" />
+    <Compile Include="Controllers\EstadoRvController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PubOrigenController.cs" />
     <Compile Include="Controllers\TipoAgenteController.cs" />
@@ -756,6 +757,9 @@
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AgentesTmp.cs">
+      <DependentUpon>ModelIngresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoRv.cs">
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelIngresos.Context.cs">
@@ -792,6 +796,7 @@
     <Compile Include="Models\VentasCabecera.cs">
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VentasCabeceraModel.cs" />
     <Compile Include="Models\VentasCabeceraNotas.cs">
       <DependentUpon>ModelIngresos.tt</DependentUpon>
     </Compile>
@@ -837,6 +842,8 @@
     <Content Include="Views\Ventas\_Reportes.cshtml" />
     <Content Include="Views\Ventas\ReportesDeVenta.cshtml" />
     <Content Include="Views\Ventas\_Boletos.cshtml" />
+    <Content Include="Views\Home\_Menu.cshtml" />
+    <Content Include="Views\Ventas\_TblReportes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -846,6 +853,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\EstadoRv\" />
     <Folder Include="Views\PubOrigen\" />
     <Folder Include="Views\TipoAgente\" />
   </ItemGroup>

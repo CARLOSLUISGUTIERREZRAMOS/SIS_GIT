@@ -22,8 +22,9 @@ namespace SIA.Controllers
              * al controlador de Carga de lo contrario deberá ser dirigido
              * al controlador correspondiente siguiendo la instruccion:
              */
-
-            return RedirectToAction("ReportesDeVenta", "Ventas");
+            //Redireccionando a un controlador
+            //return RedirectToAction("ReportesDeVenta", "Ventas");
+            return View();
         }
 
         public ActionResult Login() 

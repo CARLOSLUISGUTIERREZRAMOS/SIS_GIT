@@ -1,131 +1,65 @@
-﻿<form class="form-inline" role="form">
-
-    <div class="form-group">
-        <label for="reporte">Reporte</label>
-        <input type="text" id="reporte" class="form-control" placeholder="000000">
-    </div>
-    <div class="form-group">
-        <label for="mask_contable">Contable</label>
-        <input type="text" id="mask_contable" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
-    </div>
-    <div class="form-group">
-        <label for="fecrep">Fec.Rep.</label>
-        <input type="text" class="form-control pull-right" id="fecrep" placeholder="ELIJA RANGO DE FECHAS">
-    </div>
-    <div class="form-group">
-        <label for="tipoventa">T.Venta</label>
-        <select id="tipoventa" class="form-control">
-            <option value="T" selected>TODOS</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="loc">Loc</label>
-        <input type="text" id="loc" class="form-control" placeholder="Loc" />
-    </div>
-
-    <div class="form-group ">
-        <label for="codagente">Agente</label>
-        <div class="input-group">
-            <input type="text" id="codagente" class="form-control" placeholder="Agente">
-            <span title="Abre la pantalla de busqueda de Agentes " class="btn input-group-addon"><i class="fa fa-eye"></i></span>
-        </div>
-    </div>
-    <div class="form-group">
-
-        <input type="text" id="res_tagente" class="form-control" placeholder="" disabled>
-    </div>
-    <div class="form-group">
-        <label for="tagente">T.Agente</label>
-        <select class="form-control" id="tagente">
-
-
-        </select>
-    </div>
+﻿
+    @using (Html.BeginForm("Busqueda", "Ventas", FormMethod.Post, new { @class = "form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+<div class="form-group">
+    <label for="reporte">Reporte</label>
+    <input type="text" id="reporte" name="reporte" class="form-control" placeholder="000000">
     
-
-
-
-</form>
-
-
-@*<div class="row">
-        <div class="form-group col-lg-1">
-            <label for="reporte">Reporte</label>
-            <input type="text" id="reporte" class="form-control" placeholder="000000">
-        </div>
-        <div class="form-group col-lg-2">
+</div>
+        <div class="form-group">
             <label for="mask_contable">Contable</label>
-            <input type="text" id="mask_contable" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+            <input type="text" id="mask_contable" name="mask_contable" class="form-control">
         </div>
-        <div class="form-group col-xs-2">
+        <div class="form-group">
             <label for="fecrep">Fec.Rep.</label>
-            <input type="text" class="form-control pull-right" id="fecrep" placeholder="ELIJA RANGO DE FECHAS">
+            <input type="text" class="form-control pull-right" id="fecrep" name="fecrep" placeholder="ELIJA RANGO DE FECHAS">
         </div>
-        <div class="form-group col-xs-2">
-            <label for="tipoventa">T.Venta</label>
-            <select id="tipoventa" class="form-control">
+        <div class="form-group">
+            <label for="s_tipoventa">T.Venta</label>
+            <select id="s_tipoventa" class="form-control">
                 <option value="T" selected>TODOS</option>
             </select>
         </div>
-        <div class="form-group col-xs-1">
+        <div class="form-group">
             <label for="loc">Loc</label>
             <input type="text" id="loc" class="form-control" placeholder="Loc" />
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 form-group">
-            <label for="tagente">Agente</label>
+
+        <div class="form-group ">
+            <label for="codagente">Agente</label>
             <div class="input-group">
-
-                <input type="text" id="tagente" class="form-control" placeholder="Agente">
+                <input type="text" id="mask_agente" name="numagente" class="form-control" placeholder="0000000">
+                @*<input type="text" id="codagente" name="numagente" class="form-control" placeholder="Agente">*@
                 <span title="Abre la pantalla de busqueda de Agentes " class="btn input-group-addon"><i class="fa fa-eye"></i></span>
-
             </div>
+        </div>
+        <div class="form-group">
 
+            <input type="text" id="res_tagente" class="form-control" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="s_tipoagente">T.Agente</label>
+            <select class="form-control" id="s_tipoagente">
+                <option value="T" selected>TODOS</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="s_estadorv">Estado</label>
+            <select class="form-control" id="s_estadorv">
+                <option value="T" selected>TODOS</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="BUSCAR" class="btn btn-success" />
         </div>
 
-        <div class="col-lg-3 form-group">
 
-            <label for="tagente"></label>
-            <input type="text" id="tagente" class="form-control">
+    }
 
-        </div>
 
-        <div class="col-lg-1">
-            <button type="button" class="btn btn-info">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
-    </div>
 
-*@
 
-<div class="table-responsive">
-    <table id="example2" class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Tipo</th>
-                <th>Estado</th>
-                <th>Grupo</th>
-                <th>Loc</th>
-                <th>Agente</th>
-                <th>Nombre</th>
-                <th>Fec.Rep</th>
-                <th>Tkts</th>
-                <th>Tarifa</th>
-                <th>IGV</th>
-                <th>Otros Ing.</th>
-                <th>Otros Imp.</th>
-                <th>Comm</th>
-                <th>IGV Com</th>
-                <th>Neto</th>
-                <th>Contado</th>
-                <th>Credito</th>
-                <th>Cta Cje</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-</div>
+
 
 

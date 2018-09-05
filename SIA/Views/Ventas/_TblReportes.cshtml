@@ -1,0 +1,106 @@
+﻿@model IEnumerable<SIA.Models.VentasCabeceraModel>
+<br />
+<div class="table-responsive">
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Tipo)</th>
+                <th>@Html.DisplayNameFor(model => model.Estado)</th>
+                <th>@Html.DisplayNameFor(model => model.Grupo)</th>
+                <th>@Html.DisplayNameFor(model => model.Localidad)</th>
+                <th>@Html.DisplayNameFor(model => model.Agente)</th>
+                <th>@Html.DisplayNameFor(model => model.NombreAgente)</th>
+                <th>@Html.DisplayNameFor(model => model.FechaReporte)</th>
+                <th>@Html.DisplayNameFor(model => model.NroTkts)</th>
+                <th>@Html.DisplayNameFor(model => model.Tarifa)</th>
+                <th>@Html.DisplayNameFor(model => model.IgvTarifa)</th>
+                <th>@Html.DisplayNameFor(model => model.OtrosIngresos)</th>
+                <th>@Html.DisplayNameFor(model => model.OtrosImp)</th>
+                <th>@Html.DisplayNameFor(model => model.Comision)</th>
+                <th>@Html.DisplayNameFor(model => model.IgvComision)</th>
+                <th>@Html.DisplayNameFor(model => model.Neto)</th>
+                <th>@Html.DisplayNameFor(model => model.Contado)</th>
+                <th>@Html.DisplayNameFor(model => model.Credito)</th>
+                <th>@Html.DisplayNameFor(model => model.OtrosCargos)</th>
+                <th>@Html.DisplayNameFor(model => model.UsuarioReg)</th>
+                <th>@Html.DisplayNameFor(model => model.SaldoDepo)</th>
+                <th>@Html.DisplayNameFor(model => model.SaldoFactu)</th>
+                <th>@Html.DisplayNameFor(model => model.SaldoFinal)</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grupo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Agente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreAgente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaReporte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NroTkts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tarifa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IgvTarifa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OtrosIngresos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OtrosImp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comision)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IgvComision)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Neto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Credito)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OtrosCargos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuarioReg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SaldoDepo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SaldoFactu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SaldoFinal)
+                </td>
+            </tr>
+            }                        
+            </tbody>
+    </table>
+</div>

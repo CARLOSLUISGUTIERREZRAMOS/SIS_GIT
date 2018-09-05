@@ -29,6 +29,7 @@
         <AssociationConnector Association="IngresosModel.FK_VentasCabeceraNotas_VentasCabecera" />
         <AssociationConnector Association="IngresosModel.FK_VentasCabeceraTotales_VentasCabecera" />
         <EntityTypeShape EntityType="IngresosModel.PubOrigen" Width="1.5" PointX="10.125" PointY="2.125" />
+        <EntityTypeShape EntityType="IngresosModel.EstadoRv" Width="1.5" PointX="10.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -27,9 +27,9 @@ namespace SIA
                         "~/Scripts/AdminLTE/plugins/sparkline/jquery.sparkline.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/rptaventa").Include(
-                        "~/Scripts/ReporteVentas/ReporteVentas.js",
-                        "~/Scripts/PubOrigen/PubOrigen.js",
-                        "~/Scripts/TipoAgente/TipoAgente.js"
+                        "~/Scripts/ReporteVentas/ReporteVentas.js"
+                        //"~/Scripts/PubOrigen/PubOrigen.js",
+                        //"~/Scripts/TipoAgente/TipoAgente.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jvectormap").Include(

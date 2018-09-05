@@ -21,7 +21,7 @@ namespace SIA.Controllers
             return View();
         }
 
-        public JsonResult BuscarTipoVentas()
+        public JsonResult GetAll()
         {
             using (var db = new IngresosEntities())
             {

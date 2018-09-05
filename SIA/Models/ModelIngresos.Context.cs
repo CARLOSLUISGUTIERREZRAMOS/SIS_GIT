@@ -40,5 +40,6 @@ namespace SIA.Models
         public virtual DbSet<VentasCabeceraNotas> VentasCabeceraNotas { get; set; }
         public virtual DbSet<VentasCabeceraTotales> VentasCabeceraTotales { get; set; }
         public virtual DbSet<PubOrigen> PubOrigen { get; set; }
+        public virtual DbSet<EstadoRv> EstadoRv { get; set; }
     }
 }

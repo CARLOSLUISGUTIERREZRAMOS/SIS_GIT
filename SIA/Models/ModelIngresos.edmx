@@ -136,6 +136,16 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <Property Name="Flag" Type="smallint" />
           <Property Name="codEstado" Type="varchar" MaxLength="2" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Ingresos.dbo.EstadoRv' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="EstadoRv">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="30" />
+        </EntityType>
         <EntityType Name="PubOrigen">
           <Key>
             <PropertyRef Name="IdOrigen" />
@@ -653,6 +663,13 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
     [AgentesTmp].[codEstado] AS [codEstado]
     FROM [dbo].[AgentesTmp] AS [AgentesTmp]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="EstadoRv" EntityType="Self.EstadoRv" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EstadoRv].[Id] AS [Id], 
+    [EstadoRv].[Codigo] AS [Codigo], 
+    [EstadoRv].[Nombre] AS [Nombre]
+    FROM [dbo].[EstadoRv] AS [EstadoRv]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Agentes_TipoAgencia" Association="Self.FK_Agentes_TipoAgencia">
             <End Role="TipoAgencia" EntitySet="TipoAgencia" />
             <End Role="Agentes" EntitySet="Agentes" />
@@ -750,6 +767,7 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
             <End Role="VentasCabeceraTotales" EntitySet="VentasCabeceraTotales" />
           </AssociationSet>
           <EntitySet Name="PubOrigen" EntityType="IngresosModel.PubOrigen" />
+          <EntitySet Name="EstadoRv" EntityType="IngresosModel.EstadoRv" />
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -1327,6 +1345,14 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
           <Property Name="Activo" Type="Boolean" />
           <Property Name="BSP" Type="Int32" />
         </EntityType>
+        <EntityType Name="EstadoRv">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1811,6 +1837,15 @@ advertencia 6002: La tabla o vista 'Ingresos.dbo.AgentesTmp' no tiene definida n
                 <ScalarProperty Name="NomOrigen" ColumnName="NomOrigen" />
                 <ScalarProperty Name="Orden" ColumnName="Orden" />
                 <ScalarProperty Name="IdOrigen" ColumnName="IdOrigen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoRv">
+            <EntityTypeMapping TypeName="IngresosModel.EstadoRv">
+              <MappingFragment StoreEntitySet="EstadoRv">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
