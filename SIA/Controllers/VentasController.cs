@@ -108,7 +108,7 @@ namespace SIA.Controllers
 
                                 };
                      ViewBag.Bool = true;
-                     return View("ReportesDeVenta",query.ToList());
+                     return View("ReportesDeVenta",query.ToList().OrderBy(g  => g.Grupo));
                 }
                 catch (Exception e)
                 {
