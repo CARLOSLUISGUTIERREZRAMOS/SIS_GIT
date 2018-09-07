@@ -18,6 +18,10 @@ namespace SIA
             bundles.Add(new ScriptBundle("~/bundles/fastclick").Include(
                         "~/Scripts/AdminLTE/plugins/fastclick/fastclick.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/dataTable").Include(
+                        "~/Scripts/AdminLTE/plugins/datatables/jquery.dataTables.js",
+                        "~/Scripts/AdminLTE/plugins/datatables/dataTables.bootstrap.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
                         "~/Scripts/AdminLTE/plugins/input-mask/jquery.inputmask.js",
                         "~/Scripts/AdminLTE/plugins/input-mask/jquery.inputmask.date.extensions.js"
@@ -79,6 +83,10 @@ namespace SIA
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/AdminLTE/AdminLTE.css"));
+
+
+            bundles.Add(new StyleBundle("~/Content/dataTable").Include(
+                       "~/Scripts/AdminLTE/plugins/datatables/dataTables.bootstrap.css"));
 
             bundles.Add(new StyleBundle("~/Content/fontawesome").Include(
                 "~/Content/fontawesome/font-awesome.css"));

@@ -1,5 +1,12 @@
 ﻿$(function () {
 
+    $('#dataTable').DataTable({
+        //"bPaginate": false,
+        "bFilter": false
+    })
+
+    
+
     //Controlador : idSelect
     var jsonItemsSelect = {
         "TipoAgente": "s_tipoagente",
@@ -7,8 +14,8 @@
         "EstadoRv": "s_estadorv"
     };
     
-
-        $('#fecrep').daterangepicker()
+    
+        $('#fecrep').daterangepicker();
         $('#mask_contable').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
         $('#mask_agente').inputmask('9999999')
         $('#reporte').inputmask('999999')

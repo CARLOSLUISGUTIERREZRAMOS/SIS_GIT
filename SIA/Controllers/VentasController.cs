@@ -29,16 +29,32 @@ namespace SIA.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Busqueda(string fecrep, string reporte, string numagente)
+        public ActionResult Busqueda(string fecrep, string reporte, string numagente, string loc)
         {
             
             if (!string.IsNullOrEmpty(reporte))
             {
-                NumReporte = Int32.Parse(reporte);
+                try
+                {
+                    NumReporte = Int32.Parse(reporte);
+                }
+                catch (Exception e)
+                {
+                    
+                }
+                
             }
             if (!string.IsNullOrEmpty(numagente))
             {
-                NumAgente = Int32.Parse(numagente);
+                try
+                {
+                    NumAgente = Int32.Parse(numagente);
+                 
+                }
+                catch (Exception e)
+                {
+                    ViewBag.Error = "El numero de Agente ingresado no es valido";
+                }
             }
 
             
@@ -70,7 +86,12 @@ namespace SIA.Controllers
                                 (string.IsNullOrEmpty(fecrep) ? true : VC.FechaReporte >= dateini
                                 && VC.FechaReporte <= datefin)
                                 )
-                                                                                          
+                                where
+                                (
+                                (!string.IsNullOrEmpty(fecrep) ? true : VC.FechaReporte >= dateini
+                                && VC.FechaReporte <= datefin)
+                                )
+
                                 //VC.FechaReporte >= new DateTime(2017, 1, 1)
                                 where 
                                 (
@@ -81,6 +102,10 @@ namespace SIA.Controllers
                                (
                                (string.IsNullOrEmpty(reporte) ? true : VC.Agente == NumReporte)
 
+                               )
+                               where 
+                               (
+                               (string.IsNullOrEmpty(loc) ? true : AGT.Localidad == loc)
                                )
                                 select new VentasCabeceraModel {
                                     Tipo = VC.Tipo,

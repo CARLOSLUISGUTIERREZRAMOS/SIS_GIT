@@ -844,6 +844,7 @@
     <Content Include="Views\Ventas\_Boletos.cshtml" />
     <Content Include="Views\Home\_Menu.cshtml" />
     <Content Include="Views\Ventas\_TblReportes.cshtml" />
+    <Content Include="Views\Shared\_Modal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
