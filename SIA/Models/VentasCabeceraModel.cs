@@ -8,7 +8,8 @@ namespace SIA.Models
 {
     public class VentasCabeceraModel
     {
-      
+
+        
         public string Tipo { get; set; }
         public string Estado { get; set; }
         public int Grupo { get; set; }
@@ -21,6 +22,8 @@ namespace SIA.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> FechaReporte { get; set; }
+        
+
         [Display(Name = "Tkts")]
         public Nullable<int> NroTkts { get; set; }
         public Nullable<decimal> Tarifa { get; set; }

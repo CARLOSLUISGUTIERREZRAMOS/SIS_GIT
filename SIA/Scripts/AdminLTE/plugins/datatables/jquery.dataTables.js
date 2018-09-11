@@ -2021,7 +2021,8 @@
 				   (oSettings.oScroll.bInfinite && (oSettings.bSorted || oSettings.bFiltered)) )
 			{
 				_fnClearTable( oSettings );
-			}
+            }
+            //CAMBIO
 			oSettings._iRecordsTotal = parseInt(json.iTotalRecords, 10);
 			oSettings._iRecordsDisplay = parseInt(json.iTotalDisplayRecords, 10);
 			
@@ -9326,7 +9327,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(filtrado de _MAX_ registros totales)",
 		
 		
 			/**
@@ -9481,7 +9482,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "<b>BUSQUEDA EN RESULTADOS:</b>",
 		
 		
 			/**

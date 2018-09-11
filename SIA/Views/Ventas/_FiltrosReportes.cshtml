@@ -9,7 +9,7 @@
 </div>
         <div class="form-group">
             <label for="mask_contable">Contable</label>
-            <input type="text" id="mask_contable" name="mask_contable" class="form-control">
+            <input type="text" id="mask_contable" name="pcontable" class="form-control">
         </div>
         <div class="form-group">
             <label for="fecrep">Fec.Rep.</label>
@@ -17,8 +17,8 @@
         </div>
         <div class="form-group">
             <label for="s_tipoventa">T.Venta</label>
-            <select id="s_tipoventa" class="form-control">
-                <option value="T" selected>TODOS</option>
+            <select id="s_tipoventa" class="form-control" name="tventa">
+                <option value="" selected>TODOS</option>
             </select>
         </div>
         <div class="form-group">
@@ -46,12 +46,15 @@
         </div>
         <div class="form-group">
             <label for="s_estadorv">Estado</label>
-            <select class="form-control" id="s_estadorv">
-                <option value="T" selected>TODOS</option>
+            <select class="form-control" id="s_estadorv" name="estado">
+                <option value="" selected>TODOS</option>
             </select>
         </div>
         <div class="form-group">
-            <input type="submit" value="BUSCAR" class="btn btn-success" />
+            <button type="submit" class="btn btn-success" title="BUSCAR">
+                <i class="fa fa-search"></i>
+            </button>
+            
         </div>
 
 

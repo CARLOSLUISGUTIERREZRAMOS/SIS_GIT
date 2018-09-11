@@ -839,7 +839,7 @@
     <Content Include="Views\Agentes\Index.cshtml" />
     <Content Include="Views\Vuelos\ListaVuelos.cshtml" />
     <Content Include="Views\Ventas\Index.cshtml" />
-    <Content Include="Views\Ventas\_Reportes.cshtml" />
+    <Content Include="Views\Ventas\_FiltrosReportes.cshtml" />
     <Content Include="Views\Ventas\ReportesDeVenta.cshtml" />
     <Content Include="Views\Ventas\_Boletos.cshtml" />
     <Content Include="Views\Home\_Menu.cshtml" />
