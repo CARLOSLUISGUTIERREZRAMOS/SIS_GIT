@@ -61,9 +61,6 @@ namespace SIA
             bundles.Add(new ScriptBundle("~/bundles/fontawesome").Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/vuelo").Include(
-                        "~/css/Vuelos/vuelo.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                       "~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/unobtrusive").Include(
