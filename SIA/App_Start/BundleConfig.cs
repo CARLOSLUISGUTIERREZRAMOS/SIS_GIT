@@ -57,10 +57,7 @@ namespace SIA
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/fontawesome").Include(
-                        "~/Scripts/jquery-{version}.js"));
-
+            
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                       "~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/unobtrusive").Include(
@@ -79,14 +76,13 @@ namespace SIA
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/AdminLTE/AdminLTE.css"));
+                      "~/Content/AdminLTE/AdminLTE.css",
+                      "~/Content/fontawesome/font-awesome.css"));
 
 
             bundles.Add(new StyleBundle("~/Content/dataTable").Include(
                        "~/Scripts/AdminLTE/plugins/datatables/dataTables.bootstrap.css"));
 
-            bundles.Add(new StyleBundle("~/Content/fontawesome").Include(
-                "~/Content/fontawesome/font-awesome.css"));
             
             bundles.Add(new StyleBundle("~/Content/skinred").Include(
                 "~/Content/AdminLTE/skins/skin-red.css"));

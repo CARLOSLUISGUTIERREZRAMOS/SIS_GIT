@@ -1,6 +1,6 @@
 ﻿$(function () {
 
-    if (typeof $('#ValModal').val() != "undefined") {
+    if (typeof $('#ValModal').val() !== 'undefined') {
         $('#modal-danger').modal('show');
     }
     /* =================================================================================
